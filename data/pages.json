@@ -27,7 +27,10 @@
     "group": "B",
     "code": "B3",
     "status": "variant",
-    "asks": ["M3", "M11"],
+    "asks": [
+      "M3",
+      "M11"
+    ],
     "nav": "home",
     "diff": "Thêm một khối Dịch vụ cố vấn (placeholder) trước footer.",
     "purpose": "Hỏi Chủ tịch: mảng tư vấn có lên trang chủ từ giai đoạn 1 không."
@@ -60,7 +63,9 @@
     "group": "B",
     "code": "B1",
     "status": "variant",
-    "asks": ["M5"],
+    "asks": [
+      "M5"
+    ],
     "nav": "collection",
     "diff": "Danh sách loại hình chia ba nhóm Tranh, Gốm, Đồ trang trí; thêm hai hàng giữ chỗ.",
     "purpose": "Hỏi Chủ tịch: có giữ chỗ gốm và đồ trang trí ngay bây giờ không."
@@ -96,7 +101,7 @@
     "status": "full",
     "asks": [],
     "nav": "artists",
-    "purpose": "Danh sách người sáng tác dạng phẳng; người chưa duyệt không hiện."
+    "purpose": "Danh sách người sáng tác dạng phẳng; người chờ duyệt hiện mờ có nhãn, người nháp không hiện."
   },
   {
     "id": "artists-variant-grouped",
@@ -110,7 +115,9 @@
     "group": "B",
     "code": "B2",
     "status": "variant",
-    "asks": ["M1"],
+    "asks": [
+      "M1"
+    ],
     "nav": "artists",
     "diff": "Danh sách chia nhóm theo thập niên sinh thay vì phẳng theo tên.",
     "purpose": "Hỏi Chủ tịch: danh sách người sáng tác phẳng hay chia nhóm."
@@ -198,7 +205,9 @@
     "group": "B",
     "code": "B4",
     "status": "variant",
-    "asks": ["M4"],
+    "asks": [
+      "M4"
+    ],
     "nav": "collection",
     "diff": "Nhãn tác phẩm thêm hàng Tình trạng.",
     "purpose": "Hỏi Chủ tịch: có nêu tình trạng sở hữu trên trang tác phẩm không."
@@ -215,13 +224,27 @@
     "group": "C",
     "code": "C1",
     "status": "stub",
-    "asks": ["M3"],
+    "asks": [
+      "M3"
+    ],
     "nav": "about",
     "dek": "Tecotec New York LLC và lý do có bộ sưu tập này.",
     "blocks": [
-      { "head": "Pháp nhân", "body": "Tên đầy đủ, nơi đăng ký và quan hệ với TECOTEC Group. Phần này MarCom soạn được ngay, đang chờ xác nhận câu chữ." , "blocker": "Chờ pháp chế xác nhận thông tin pháp nhân công bố." },
-      { "head": "Định vị", "body": "Vì sao pháp nhân sưu tập và giới thiệu tranh Việt Nam. Đoạn 150 đến 300 từ.", "blocker": "Chờ Chủ tịch duyệt định vị (M3)." },
-      { "head": "Quan hệ với TECOTEC Việt Nam", "body": "Một đoạn ngắn nêu Tecotec New York LLC là thành viên của TECOTEC Group và mảng nghệ thuật tách khỏi hoạt động kinh doanh cốt lõi.", "blocker": "Chờ Chủ tịch duyệt cách diễn đạt." }
+      {
+        "head": "Pháp nhân",
+        "body": "Tên đầy đủ, nơi đăng ký và quan hệ với TECOTEC Group. Phần này MarCom soạn được ngay, đang chờ xác nhận câu chữ.",
+        "blocker": "Chờ pháp chế xác nhận thông tin pháp nhân công bố."
+      },
+      {
+        "head": "Định vị",
+        "body": "Vì sao pháp nhân sưu tập và giới thiệu tranh Việt Nam. Đoạn 150 đến 300 từ.",
+        "blocker": "Chờ Chủ tịch duyệt định vị (M3)."
+      },
+      {
+        "head": "Quan hệ với TECOTEC Việt Nam",
+        "body": "Một đoạn ngắn nêu Tecotec New York LLC là thành viên của TECOTEC Group và mảng nghệ thuật tách khỏi hoạt động kinh doanh cốt lõi.",
+        "blocker": "Chờ Chủ tịch duyệt cách diễn đạt."
+      }
     ]
   },
   {
@@ -236,12 +259,22 @@
     "group": "C",
     "code": "C2",
     "status": "stub",
-    "asks": ["M12"],
+    "asks": [
+      "M12"
+    ],
     "nav": "contact",
     "dek": "Địa chỉ pháp nhân tại Mỹ và cách liên hệ.",
     "blocks": [
-      { "head": "Địa chỉ và thư điện tử", "body": "Địa chỉ đăng ký của pháp nhân và một địa chỉ thư điện tử tiếp nhận liên hệ. Không bịa trong bản demo.", "blocker": "Chờ pháp chế xác nhận địa chỉ công bố (M12)." },
-      { "head": "Biểu mẫu liên hệ", "body": "Các trường dự kiến: họ tên, thư điện tử, nội dung. Bản demo không có biểu mẫu hoạt động.", "blocker": "Chờ chốt nền tảng web và người tiếp nhận (M9)." }
+      {
+        "head": "Địa chỉ và thư điện tử",
+        "body": "Địa chỉ đăng ký của pháp nhân và một địa chỉ thư điện tử tiếp nhận liên hệ. Không bịa trong bản demo.",
+        "blocker": "Chờ pháp chế xác nhận địa chỉ công bố (M12)."
+      },
+      {
+        "head": "Biểu mẫu liên hệ",
+        "body": "Các trường dự kiến: họ tên, thư điện tử, nội dung. Bản demo không có biểu mẫu hoạt động.",
+        "blocker": "Chờ chốt nền tảng web và người tiếp nhận (M9)."
+      }
     ]
   },
   {
@@ -256,12 +289,19 @@
     "group": "C",
     "code": "C3",
     "status": "stub",
-    "asks": ["M3", "M11"],
+    "asks": [
+      "M3",
+      "M11"
+    ],
     "nav": null,
     "dek": "Trang này chưa có nội dung và chưa hiện trên menu.",
     "verify": true,
     "blocks": [
-      { "head": "Mô tả dịch vụ", "body": "Mọi câu chữ về năng lực chuyên môn của pháp nhân chỉ được đăng sau khi luật sư xác nhận cách diễn đạt và giới hạn trách nhiệm. Bản demo cố ý để trống.", "blocker": "Chờ luật sư (M11) và Chủ tịch (M3)." }
+      {
+        "head": "Mô tả dịch vụ",
+        "body": "Mọi câu chữ về năng lực chuyên môn của pháp nhân chỉ được đăng sau khi luật sư xác nhận cách diễn đạt và giới hạn trách nhiệm. Bản demo cố ý để trống.",
+        "blocker": "Chờ luật sư (M11) và Chủ tịch (M3)."
+      }
     ]
   },
   {
@@ -276,13 +316,27 @@
     "group": "C",
     "code": "C4",
     "status": "stub",
-    "asks": ["M7"],
+    "asks": [
+      "M7"
+    ],
     "nav": null,
     "dek": "Bài viết chuyên môn về chất liệu và tác phẩm. Chưa hiện trên menu.",
     "blocks": [
-      { "head": "Bài viết", "body": "Danh sách bài viết chuyên môn. Không tự viết trong bản demo.", "blocker": "Chờ người có chuyên môn mỹ thuật (M7)." },
-      { "head": "Bài viết", "body": "Vị trí bài viết thứ hai.", "blocker": "Chờ M7." },
-      { "head": "Bài viết", "body": "Vị trí bài viết thứ ba.", "blocker": "Chờ M7." }
+      {
+        "head": "Bài viết",
+        "body": "Danh sách bài viết chuyên môn. Không tự viết trong bản demo.",
+        "blocker": "Chờ người có chuyên môn mỹ thuật (M7)."
+      },
+      {
+        "head": "Bài viết",
+        "body": "Vị trí bài viết thứ hai.",
+        "blocker": "Chờ M7."
+      },
+      {
+        "head": "Bài viết",
+        "body": "Vị trí bài viết thứ ba.",
+        "blocker": "Chờ M7."
+      }
     ]
   },
   {
@@ -297,13 +351,23 @@
     "group": "C",
     "code": "C5",
     "status": "stub",
-    "asks": ["M13"],
+    "asks": [
+      "M13"
+    ],
     "nav": null,
     "footer": true,
     "dek": "Chính sách quyền riêng tư theo pháp luật Mỹ.",
     "blocks": [
-      { "head": "Dữ liệu thu thập", "body": "Website không thu thập dữ liệu cá nhân ngoài biểu mẫu liên hệ, nếu có. Câu chữ cuối cùng do luật sư soạn.", "blocker": "Chờ luật sư (M13)." },
-      { "head": "Công cụ đo lường", "body": "Có gắn công cụ đo lường truy cập hay không tùy quyết định M19.", "blocker": "Chờ M19." }
+      {
+        "head": "Dữ liệu thu thập",
+        "body": "Website không thu thập dữ liệu cá nhân ngoài biểu mẫu liên hệ, nếu có. Câu chữ cuối cùng do luật sư soạn.",
+        "blocker": "Chờ luật sư (M13)."
+      },
+      {
+        "head": "Công cụ đo lường",
+        "body": "Có gắn công cụ đo lường truy cập hay không tùy quyết định M19.",
+        "blocker": "Chờ M19."
+      }
     ]
   },
   {
@@ -318,12 +382,18 @@
     "group": "C",
     "code": "C6",
     "status": "stub",
-    "asks": ["M13"],
+    "asks": [
+      "M13"
+    ],
     "nav": null,
     "footer": true,
     "dek": "Điều khoản sử dụng website.",
     "blocks": [
-      { "head": "Điều khoản", "body": "Toàn bộ nội dung do luật sư soạn.", "blocker": "Chờ luật sư (M13)." }
+      {
+        "head": "Điều khoản",
+        "body": "Toàn bộ nội dung do luật sư soạn.",
+        "blocker": "Chờ luật sư (M13)."
+      }
     ]
   },
   {
@@ -338,12 +408,18 @@
     "group": "C",
     "code": "C7",
     "status": "stub",
-    "asks": ["M13"],
+    "asks": [
+      "M13"
+    ],
     "nav": null,
     "footer": true,
     "dek": "Mức tuân thủ WCAG và cách góp ý.",
     "blocks": [
-      { "head": "Mức tuân thủ", "body": "Website hướng tới WCAG 2.1 mức AA: tương phản, bàn phím, tôn trọng tùy chọn giảm chuyển động. MarCom soạn, luật sư rà.", "blocker": "Chờ luật sư rà (M13)." }
+      {
+        "head": "Mức tuân thủ",
+        "body": "Website hướng tới WCAG 2.1 mức AA: tương phản, bàn phím, tôn trọng tùy chọn giảm chuyển động. MarCom soạn, luật sư rà.",
+        "blocker": "Chờ luật sư rà (M13)."
+      }
     ]
   },
   {
@@ -358,13 +434,23 @@
     "group": "C",
     "code": "C8",
     "status": "stub",
-    "asks": ["M10"],
+    "asks": [
+      "M10"
+    ],
     "nav": null,
     "footer": true,
     "dek": "Quyền ảnh, quyền tác giả và quy trình gỡ nội dung.",
     "blocks": [
-      { "head": "Quyền tác giả và quyền ảnh", "body": "Sở hữu bản gốc và quyền tác giả là hai việc khác nhau. Trang này nêu cơ sở pháp lý của việc đăng ảnh tác phẩm.", "blocker": "Chờ luật sư (M10)." },
-      { "head": "Quy trình gỡ nội dung", "body": "Cách người có quyền liên quan gửi yêu cầu gỡ ảnh.", "blocker": "Chờ luật sư (M10)." }
+      {
+        "head": "Quyền tác giả và quyền ảnh",
+        "body": "Sở hữu bản gốc và quyền tác giả là hai việc khác nhau. Trang này nêu cơ sở pháp lý của việc đăng ảnh tác phẩm.",
+        "blocker": "Chờ luật sư (M10)."
+      },
+      {
+        "head": "Quy trình gỡ nội dung",
+        "body": "Cách người có quyền liên quan gửi yêu cầu gỡ ảnh.",
+        "blocker": "Chờ luật sư (M10)."
+      }
     ]
   }
 ]

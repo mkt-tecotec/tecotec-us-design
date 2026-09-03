@@ -74,13 +74,12 @@ export function render({ page, data }) {
     </div>
   </section>
 
-  ${isAdvisory ? html`<section class="spread" aria-labelledby="h-advisory">
-    <div class="spread__text">
+  ${isAdvisory ? html`<section class="section" aria-labelledby="h-advisory">
+    <div class="prose">
       ${head('Dịch vụ cố vấn', 2, 'h-advisory')}
       ${pending({ tag: 'Dịch vụ cố vấn', body: 'Chỗ này dành cho phần giới thiệu mảng tư vấn của pháp nhân, nếu Chủ tịch quyết định đưa lên trang chủ. Bản demo cố ý để trống, không viết câu chữ nào về năng lực chuyên môn.', blocker: 'Chờ Chủ tịch (M3) và luật sư (M11).', verify: true })}
       ${ask({ question: 'Trang chủ có nên nhắc tới dịch vụ cố vấn ngay từ giai đoạn 1, hay chờ luật sư xác nhận M10 đến M13 rồi mới đưa lên?', back: 'home.html', codes: page.asks })}
     </div>
-    <div class="spread__side"></div>
   </section>` : ''}
 
 </div>`;

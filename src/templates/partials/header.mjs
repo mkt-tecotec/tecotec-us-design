@@ -43,10 +43,10 @@ ${draftBanner(page)}
     <nav class="bar__nav" aria-label="Điều hướng chính">
       <ul class="bar__links caps">${links(page)}</ul>
       <button class="bar__toggle caps" type="button" aria-expanded="false" aria-controls="menu-panel">Mục lục</button>
+      <div class="bar__panel" id="menu-panel">
+        <ul>${links(page)}</ul>
+      </div>
     </nav>
-  </div>
-  <div class="bar__panel" id="menu-panel">
-    <ul>${links(page)}</ul>
   </div>
 </header>
 </div>`;

@@ -9,7 +9,7 @@ export function render({ page, data }) {
     return html`<div class="wrap">
   <header class="stack">
     <h1 class="title title--2xl">Người sáng tác</h1>
-    <p class="dek">Danh sách người có tác phẩm trong bộ sưu tập, xếp theo tên. Người chưa được duyệt chỉ hiện tên.</p>
+    <p class="dek">Danh sách người có tác phẩm trong bộ sưu tập, xếp theo tên. Người đang chờ duyệt hiện mờ, có nhãn, chưa có trang riêng; người ở trạng thái nháp không hiện.</p>
   </header>
   <div class="section">
     <ul class="rows entry">

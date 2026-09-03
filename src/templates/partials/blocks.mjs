@@ -55,7 +55,7 @@ export function workCard(w, data, level = 3) {
   const h = `h${level}`;
   return html`<article class="work">
   <a class="work__plate" href="${artworkHref(w)}" aria-label="${w.title}, xem trang tác phẩm">
-    <div class="plate__box" style="--ar: ${ar}">${img(data.images, data.slots, main, { sizes: '(max-width: 40rem) 50vw, (max-width: 60rem) 33vw, 25vw' })}</div>
+    <div class="plate__box" style="--ar: ${ar}">${img(data.images, data.slots, main, { sizes: '(max-width: 25rem) 100vw, (max-width: 40rem) 50vw, (max-width: 60rem) 33vw, 25vw' })}</div>
   </a>
   <div class="work__label">
     <p class="work__no num">${w.tw_inventory_no}</p>
@@ -97,7 +97,7 @@ export function artistRow(a, data, { link = true } = {}) {
     <span class="row__count">${n} tác phẩm</span>
     <span class="row__arrow" aria-hidden="true">${approved && link ? '→' : ''}</span>`;
   if (approved && link) return html`<li class="row"><a class="row__inner" href="${artistHref(a)}">${inner}</a></li>`;
-  return html`<li class="row"><div class="row__inner" aria-disabled="true">${inner}</div></li>`;
+  return html`<li class="row row--reserved"><div class="row__inner" aria-disabled="true">${inner}</div></li>`;
 }
 
 export function anonymousRow(data) {
@@ -120,7 +120,7 @@ export function mediumRow(m, data) {
       ? html`<span class="row__status chip chip--dashed caps">Giữ chỗ, chờ M5</span>`
       : html`<span class="row__status chip chip--dashed caps">Đang chuẩn bị</span>`);
   const thumb = m.public
-    ? html`<div class="row__thumb plate"><div class="plate__box" style="--ar: 4 / 5">${img(data.images, data.slots, m.image, { w: 640, sizes: '96px' })}</div></div>`
+    ? html`<div class="row__thumb plate"><div class="plate__box" style="--ar: 4 / 5">${img(data.images, data.slots, m.image, { w: 640, sizes: '96px' })}</div><span class="row__thumb-tag caps">Ảnh minh họa</span></div>`
     : html`<div class="row__thumb row__thumb--empty" aria-hidden="true"></div>`;
   const inner = html`<span class="row__name">${m.name}</span>
     <span class="row__desc">${m.description_short}</span>

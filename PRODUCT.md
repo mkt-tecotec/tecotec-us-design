@@ -35,4 +35,4 @@ Ba từ: nghiêm cẩn, tiết chế, có số hiệu. Giọng của nhãn tư�
 
 ## Accessibility and Inclusion
 
-WCAG 2.1 mức AA. Font có đủ dấu tiếng Việt (subset vietnamese của Google Fonts). Mọi phần tử tương tác cao tối thiểu 44px, điều khiển được bằng bàn phím, có vòng focus hiện tức thì. Tôn trọng tùy chọn giảm chuyển động. Không truyền thông tin chỉ bằng màu.
+WCAG 2.1 mức AA. Font có đủ dấu tiếng Việt (subset vietnamese của Google Fonts). Nút, link điều hướng, link hành động và hàng danh sách cao tối thiểu 44px; link trong dòng văn và trong thẻ tối thiểu 24px theo WCAG 2.5.8. Mọi phần tử điều khiển được bằng bàn phím, có vòng focus hiện tức thì. Tôn trọng tùy chọn giảm chuyển động. Không truyền thông tin chỉ bằng màu.
