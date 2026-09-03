@@ -26,6 +26,7 @@ export function render({ page, data }) {
     if (!groups.has(key)) groups.set(key, []);
     groups.get(key).push(a);
   }
+  for (const list of groups.values()) list.sort((x, y) => (x.birth_year || 9999) - (y.birth_year || 9999) || x.name.localeCompare(y.name, 'vi'));
   const keys = [...groups.keys()].sort();
 
   return html`<div class="wrap">

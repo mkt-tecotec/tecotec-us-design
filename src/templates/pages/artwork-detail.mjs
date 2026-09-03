@@ -13,8 +13,10 @@ export function render({ page, data, work }) {
 
   const mainPlate = set
     ? html`<div class="pieces" role="group" aria-label="${w.tw_part_of_set}">
-        ${join(set.map((piece, i) => html`<div class="plate">
-          <a href="${artworkHref(piece)}" aria-label="${piece.title}"><div class="plate__box" style="--ar: ${piece.tw_dim_w} / ${piece.tw_dim_h}">${plateImg(data, piece, i === 0)}</div></a>
+        ${join(set.map((piece, i) => html`<div class="plate${piece.slug === w.slug ? ' plate--current' : ''}">
+          ${piece.slug === w.slug
+            ? html`<span class="pieces__link" aria-current="page"><div class="plate__box" style="--ar: ${piece.tw_dim_w} / ${piece.tw_dim_h}">${plateImg(data, piece, true)}</div></span>`
+            : html`<a class="pieces__link" href="${artworkHref(piece)}" aria-label="${piece.title}"><div class="plate__box" style="--ar: ${piece.tw_dim_w} / ${piece.tw_dim_h}">${plateImg(data, piece, false)}</div></a>`}
           <p class="pieces__no num">${ROMAN[i] || i + 1}${piece.slug === w.slug ? ' · tấm này' : ''}</p>
         </div>`))}
       </div>
@@ -28,23 +30,23 @@ export function render({ page, data, work }) {
 
   return html`<div class="wrap">
 
-  <section class="spread spread--wide-text" aria-label="Tác phẩm ${w.title}">
+  <section class="spread spread--photo" aria-label="Tác phẩm ${w.title}">
     <div class="spread__text">
-      ${mainPlate}
-    </div>
-    <div class="spread__side">
       <div class="tombstone">
         ${label(w, data, { ownership })}
         <p class="label__note">Ảnh minh họa, không phải tác phẩm thật. Số đo lấy từ dữ liệu mẫu.</p>
         ${ownership ? ask({ question: 'Có nêu tình trạng sở hữu trên trang tác phẩm không? Ba lựa chọn: thuộc bộ sưu tập, ký gửi, hoặc không nêu.', back: 'artworks-detail.html', codes: page.asks }) : ''}
       </div>
     </div>
+    <div class="spread__side">
+      ${mainPlate}
+    </div>
   </section>
 
   ${details.length ? html`<section class="section" aria-labelledby="h-details">
     ${head('Chi tiết', 2, 'h-details')}
     <div class="strip">
-      ${join(details.map((d) => plate({ data, slot: d.slot, ar: '4 / 3', caption: d.caption, sizes: '(max-width: 60rem) 50vw, 25vw', tag: false })))}
+      ${join(details.map((d) => plate({ data, slot: d.slot, ar: '4 / 3', caption: d.caption, sizes: '(max-width: 60rem) 50vw, 25vw', tag: true })))}
     </div>
     <p class="muted stack">Ảnh chi tiết là minh họa tạm. Khi có ảnh thật, mỗi tác phẩm cần ảnh chuẩn màu và ảnh ánh sáng xiên.</p>
   </section>` : ''}
@@ -56,7 +58,7 @@ export function render({ page, data, work }) {
 
   ${related.length ? html`<section class="section" aria-labelledby="h-related">
     ${head(creator ? 'Cùng người sáng tác' : 'Cùng chưa xác định tác giả', 2, 'h-related')}
-    ${worksGrid(related, data, 3)}
+    ${worksGrid(related, data, Math.min(3, Math.max(2, related.length)))}
     <p class="stack"><a class="link" href="${artistHref(creator)}">${creator ? `Tất cả tác phẩm của ${creator.name} →` : 'Tất cả tác phẩm khuyết danh →'}</a></p>
   </section>` : ''}
 

@@ -10,12 +10,13 @@ export function render({ page, data, artist }) {
     <p class="count caps">Tác giả chưa xác định</p>
     <p class="count caps">${works.length} tác phẩm trong bộ sưu tập</p>
   </header>
-  <div class="section">
+  <section class="section" aria-labelledby="h-bio">
+    ${head('Tiểu sử', 2, 'h-bio')}
     ${pending({ tag: 'Tiểu sử', body: 'Không có tiểu sử. Các tác phẩm dưới đây chưa xác định được tác giả; khi có thông tin nguồn gốc, tác phẩm sẽ được chuyển sang trang người sáng tác tương ứng.', blocker: 'Chờ nguồn gốc (M4, M10).' })}
-  </div>
+  </section>
   <section class="section" aria-labelledby="h-works">
     ${head('Tác phẩm', 2, 'h-works')}
-    ${worksGrid(works, data, 3)}
+    ${worksGrid(works, data, Math.min(3, Math.max(2, works.length)))}
   </section>
 </div>`;
   }
@@ -27,12 +28,13 @@ export function render({ page, data, artist }) {
     <p class="count num">${years(artist)} · ${artist.role}</p>
     <p class="count caps">${works.length} tác phẩm trong bộ sưu tập</p>
   </header>
-  <div class="section">
+  <section class="section" aria-labelledby="h-bio">
+    ${head('Tiểu sử', 2, 'h-bio')}
     ${pending({ tag: 'Tiểu sử', body: 'Tiểu sử 100 đến 200 từ: nơi học, giai đoạn sáng tác, chất liệu quen dùng. Không tự viết trong bản demo.', blocker: 'Chờ người có chuyên môn mỹ thuật (M7).' })}
-  </div>
+  </section>
   <section class="section" aria-labelledby="h-works">
     ${head('Tác phẩm', 2, 'h-works')}
-    ${works.length ? worksGrid(works, data, 3) : html`<p class="muted">Chưa có tác phẩm nào được nhập.</p>`}
+    ${works.length ? worksGrid(works, data, Math.min(3, Math.max(2, works.length))) : html`<p class="muted">Chưa có tác phẩm nào được nhập.</p>`}
   </section>
 </div>`;
 }

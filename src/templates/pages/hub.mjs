@@ -10,7 +10,7 @@ const GROUPS = [
 ];
 
 const BADGE = {
-  full: ['chip chip--gilt caps', 'Đầy đủ'],
+  full: ['chip caps', 'Đầy đủ'],
   variant: ['chip caps', 'Biến thể B'],
   stub: ['chip chip--dashed caps', 'Khung']
 };
@@ -81,7 +81,7 @@ export function render({ data, generated }) {
     ${head('Ảnh minh họa', 2, 'h-credits')}
     <p class="prose">Toàn bộ ảnh là ảnh stock từ Pexels, dùng tạm cho bản demo. Nhiếp ảnh gia:</p>
     <ul class="credits stack">
-      ${join(photographers.map((r) => html`<li><a href="${r.photographer_url}" rel="noopener">${r.photographer}</a></li>`))}
+      ${join(photographers.map((r) => html`<li><a class="link" href="${r.photographer_url}" rel="noopener">${r.photographer}</a></li>`))}
     </ul>
   </section>
 </div>`;
