@@ -14,22 +14,8 @@ function links(page) {
   }));
 }
 
-export function draftBanner(page) {
-  const isHub = page.id === 'index';
-  return html`<div class="draft" role="note">
-  <div class="wrap">
-    <span class="caps">Bản nháp</span>
-    <span class="draft__text">${isHub ? 'Mục lục nội bộ của bản demo. Ảnh minh họa tạm; tên người và tác phẩm là dữ liệu mẫu hư cấu.' : 'Trang demo nội bộ, chưa phát hành. Ảnh minh họa tạm; tên người và tác phẩm là dữ liệu mẫu hư cấu.'}</span>
-    <span class="draft__text draft__text--short">Ảnh và tên là mẫu tạm.</span>
-    ${isHub ? '' : html`<span class="draft__url num"><span class="caps">URL</span> ${page.prod_url}</span>`}
-    ${isHub ? '' : html`<a class="draft__link link" href="index.html">Về mục lục →</a>`}
-  </div>
-</div>`;
-}
-
 export function header(page) {
   return html`<div class="site-top">
-${draftBanner(page)}
 <header class="bar">
   <div class="wrap">
     <a class="brand" href="home.html">

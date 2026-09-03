@@ -30,7 +30,7 @@ Ba từ: nghiêm cẩn, tiết chế, có số hiệu. Giọng của nhãn tư�
 - Trưng bày, không bán: không giá, không giỏ hàng, không nút mua, không lời mời chào.
 - Nhãn bảo tàng trước, trang trí sau: mỗi trang có một khối chính mở bằng đường kẻ mạ, thông tin theo thứ tự cố định.
 - Chỗ nào chưa duyệt thì nói là chưa duyệt: không lorem, không số liệu bịa, không tuyên bố thẩm định; khối chờ duyệt có nhãn rõ và ghi câu hỏi nào đang chặn.
-- Ảnh thật là của tác phẩm, không phải của website: bản demo chỉ dùng ảnh minh họa tạm từ Pexels và nói rõ điều đó ở mọi chỗ có ảnh.
+- Ảnh thật là của tác phẩm, không phải của website: bản demo chỉ dùng ảnh tạm từ Pexels, đánh dấu bằng `alt` và `data-placeholder`; không hiện nhãn trên giao diện (quyết định 03/09).
 - Một hệ thống cho mọi trang: DESIGN.md và tokens.css là luật; các trang khác nhau về hình dạng, không khác nhau về giọng.
 
 ## Accessibility and Inclusion

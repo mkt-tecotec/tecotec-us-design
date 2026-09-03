@@ -78,7 +78,7 @@ Hai "signature move" của taste-design bị bỏ cho dự án này vì trái s�
 
 - **Giấy ivory** (#F7F3EC, `--color-paper`): nền trang, khóa từ KDB 02.
 - **Mat** (#EEE9E1, `--color-paper-2`): nền sau ảnh, nền hover của hàng.
-- **Giấy 3** (#E3DDD4, `--color-paper-3`): khối chờ duyệt, banner nháp.
+- **Giấy 3** (#E3DDD4, `--color-paper-3`): khối chờ duyệt, dải ghi chú của mục lục.
 - **Mực** (#1A1512, `--color-ink`): chữ, kẻ 2px, underline active.
 - **Nâu cánh gián** (#5A3A29, `--color-ink-2` và `--color-surface-deep`): chữ phụ; nền footer.
 - **Xám ấm** (#655850, `--color-muted`): caption, metadata. Không dùng `--color-neutral` (#827871) cho chữ thân.
@@ -115,11 +115,11 @@ Phẳng. Không bóng. Chiều sâu đến từ trọng lượng kẻ (1px bạc
 - **Link (C3)**: chữ + mũi tên là chữ (→), gạch dưới 1px, hover 2px, active màu nâu, focus ring 2px hiện tức thì. Không nút trên site (không có gì để gửi).
 - **Chip trạng thái (C1)**: chữ nhật, viền 1px mực; `--dashed` cho giữ chỗ; `--muted` cho nhãn phụ. Chỉ để đọc. Không dùng vàng quỳ cho chip (Luật Vàng Quỳ).
 - **Nhãn tác phẩm** (`dl.spec`): hai cột 9rem / 1fr, kẻ hairline giữa các hàng; key màu xám ấm; số hiệu Condensed tabular màu son. Trên trang tác phẩm nhãn là khối chính (kẻ mạ) và sticky dưới bar.
-- **Plate / thẻ tác phẩm** (`.work`): plate + nhãn: số hiệu, tên (Expanded 700), người sáng tác (600, nâu), dòng "năm · chất liệu · h × w cm". Hover: mat paper-2 sang paper-3. Không zoom, không bóng.
+- **Plate / thẻ tác phẩm** (`.work`): plate + nhãn: số hiệu, tên (Expanded 700), người sáng tác (600, nâu), dòng "năm · chất liệu · h × w cm". Hover: mat paper-2 sang paper-3. Không zoom, không bóng. Ảnh placeholder chỉ đánh dấu bằng `alt` và `data-placeholder`, không nhãn nhìn thấy (quyết định 03/09).
 - **Hàng danh mục** (`.row`): tên Expanded, năm Condensed tabular, vai trò xám, số tác phẩm, mũi tên. Hover nền paper-2. Hàng giữ chỗ không link, `aria-disabled`.
 - **Khối chờ duyệt** (`.pending`): paper-3, viền dashed, nhãn viết hoa, một câu nói ở đây sẽ có gì, một dòng câu hỏi chặn. Không lorem. Có `data-verify` khi liên quan pháp lý.
 - **Panel câu hỏi** (`.ask`): kẻ 2px mực, nhãn "CÂU HỎI CHO CHỦ TỊCH" màu son, câu hỏi, link "Xem bản A →". Nằm ngay dưới khối được thêm.
-- **Nav N12**: banner nháp (paper-3, chữ mực, không nút đóng, thu lên khi cuộn xuống) + bar 72px sticky: logo TECOTEC, kẻ dọc, wordmark "tecotec.us" và dòng "thành viên của TECOTEC Group"; bốn link Condensed viết hoa; active gạch dưới 2px mực; dưới 60rem là nút "Mục lục" 44px có `aria-expanded`.
+- **Nav**: bar 72px sticky: logo TECOTEC, kẻ dọc, wordmark "tecotec.us" và dòng "thành viên của TECOTEC Group"; bốn link Condensed viết hoa; active gạch dưới 2px mực; dưới 60rem là nút "Mục lục" 44px có `aria-expanded`. Không banner, không CTA (quyết định 03/09: bỏ banner nháp).
 - **Footer Ft4**: colophon ba đoạn trên nâu cánh gián, chữ giấy, không cột, không icon, không logo.
 - Trạng thái: mọi phần tử tương tác có default, hover, focus-visible, active; phần tử vô hiệu dùng `aria-disabled` và màu xám.
 
@@ -133,10 +133,10 @@ Phẳng. Không bóng. Chiều sâu đến từ trọng lượng kẻ (1px bạc
 
 ## 7. Motion and Interaction
 
-Hai primitive, không hơn: (1) banner nháp thu lên bằng transform 320ms khi cuộn xuống, hiện lại khi cuộn lên, luôn hiện khi ở đầu trang; (2) đổi nền mat hoặc hàng và độ dày gạch dưới khi hover, 220ms ease-out, chỉ với con trỏ. Không scroll-reveal, không zoom ảnh, không counter, không bounce. Focus ring hiện tức thì. `prefers-reduced-motion`: banner đứng yên, transition 0ms.
+Một primitive: đổi nền mat hoặc hàng và độ dày gạch dưới khi hover, 220ms ease-out, chỉ với con trỏ. Không scroll-reveal, không zoom ảnh, không counter, không bounce. Focus ring hiện tức thì. `prefers-reduced-motion`: transition 0ms.
 
 ## 8. Do's and Don'ts
 
-Do: đếm số từ dữ liệu; nói rõ chỗ chưa duyệt và câu hỏi nào chặn; ghi "Ảnh minh họa" ở mọi chỗ có ảnh; viết tiếng Việt có dấu, động từ hơn tính từ.
+Do: đếm số từ dữ liệu; nói rõ chỗ chưa duyệt và câu hỏi nào chặn; ảnh placeholder mang `alt` và `data-placeholder`; viết tiếng Việt có dấu, động từ hơn tính từ.
 
 Don't: em dash; chú thích tiếng Anh; lorem; số liệu, địa chỉ, ngày tháng bịa; tuyên bố thẩm định; ảnh tác phẩm thật; serif; italic ở tiêu đề; Inter, Roboto, Be Vietnam Pro; họ chữ thứ ba; mono; #000 và #fff; xám không sắc; gradient; glass; bóng; glow; accent trên 5%; accent trên nền nâu; vàng quỳ làm chữ; cam TECOTEC làm token; hero căn giữa hay cao 100vh; eyebrow; tag-trái tiêu-đề-phải; đánh số section; lưới ba thẻ tính năng đều nhau có icon (lưới tác phẩm trên mat không thuộc cấm này, xem Luật Mat); icon tile; card lồng card; viền side-stripe; bo góc; pill; hover zoom; `transition: all`; bounce hay spring; scroll reveal; loop vĩnh viễn; ảnh chèn trong tiêu đề; cursor effect; modal; thư viện icon; emoji; link hai dòng; `1fr` trần trên grid ảnh; `100vw`; `overflow-x: hidden`; nav N1a; footer Ft3; masthead báo; social row; form nhận tin; giá; giỏ hàng.

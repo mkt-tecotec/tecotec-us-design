@@ -6,8 +6,8 @@
     "theme": "custom",
     "theme_axes": "light / grotesk-sans-wide / warm",
     "vibe": "vựng tập bảo tàng, giấy ivory, son và vàng quỳ trên nền cánh gián",
-    "enrichment": "photographic placeholders (Pexels, có nhãn)",
-    "nav": "N12",
+    "enrichment": "photographic placeholders (Pexels, alt + data-placeholder)",
+    "nav": "bar-đơn (N9-lean, không banner)",
     "footer": "Ft4",
     "brief": "tecotec.us · demo trưng bày tranh sơn mài, 20 trang + hub"
   }

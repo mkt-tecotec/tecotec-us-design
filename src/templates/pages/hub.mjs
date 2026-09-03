@@ -72,14 +72,14 @@ export function render({ data, generated }) {
       <div><p class="stats__n">${c.artworks}</p><p class="stats__l">tác phẩm, trong đó ${c.anonymous} khuyết danh và ${c.sets} bộ nhiều tấm</p></div>
       <div><p class="stats__n">${c.artists_approved}</p><p class="stats__l">người sáng tác đã duyệt trên ${c.artists_total} trong dữ liệu</p></div>
       <div><p class="stats__n">${c.mediums_public}</p><p class="stats__l">loại hình đang trưng bày trên ${data.mediums.length} loại hình có chỗ</p></div>
-      <div><p class="stats__n">${c.images}</p><p class="stats__l">ảnh minh họa tạm từ Pexels</p></div>
+      <div><p class="stats__n">${c.images}</p><p class="stats__l">ảnh tạm từ Pexels</p></div>
     </div>
     <p class="muted stack">Tên người sáng tác và tên tác phẩm trong dữ liệu mẫu là hư cấu. Số đếm tính lúc build từ các file trong thư mục data.</p>
   </section>
 
   <section class="section" aria-labelledby="h-credits">
-    ${head('Ảnh minh họa', 2, 'h-credits')}
-    <p class="prose">Toàn bộ ảnh là ảnh stock từ Pexels, dùng tạm cho bản demo. Nhiếp ảnh gia:</p>
+    ${head('Nguồn ảnh', 2, 'h-credits')}
+    <p class="prose">Toàn bộ ảnh trong bản demo là ảnh stock từ Pexels, dùng tạm cho tới khi có ảnh tác phẩm. Nhiếp ảnh gia:</p>
     <ul class="credits stack">
       ${join(photographers.map((r) => html`<li><a class="link" href="${r.photographer_url}" rel="noopener">${r.photographer}</a></li>`))}
     </ul>

@@ -5,7 +5,7 @@ import { footer } from './partials/footer.mjs';
 export const FONTS_URL = 'https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Public+Sans:ital,wght@0,300..800;1,300..800&display=swap';
 
 export function layout({ page, title, body }) {
-  const fullTitle = page.id === 'index' ? 'Mục lục bản demo tecotec.us' : `${title} · tecotec.us (bản nháp)`;
+  const fullTitle = page.id === 'index' ? 'Mục lục bản demo tecotec.us' : `${title} · tecotec.us`;
   const description = page.dek || page.purpose || `${title}. Bản demo nội bộ của website trưng bày tranh Việt Nam của Tecotec New York LLC, chưa phát hành.`;
   const doc = html`<!DOCTYPE html>
 <html lang="vi">

@@ -55,7 +55,6 @@ for (const f of htmlFiles) {
   if ((s.match(/<h1\b/g) || []).length !== 1) fail('F', `${f}: số h1 khác 1`);
   if ((s.match(/<main\b/g) || []).length !== 1) fail('F', `${f}: số main khác 1`);
   if (/href="\/|src="\/(?!\/)/.test(s)) fail('E', `${f}: đường dẫn tuyệt đối (Pages chạy dưới subpath)`);
-  if (/index\.html|\.html/.test(f) && !s.includes('href="index.html"') && f !== 'index.html') fail('E', `${f}: không có link về mục lục`);
 
   // ảnh
   for (const m of s.matchAll(/<img\b[^>]*>/g)) {
@@ -65,7 +64,7 @@ for (const f of htmlFiles) {
     if (src.startsWith('http')) {
       if (!src.startsWith('https://images.pexels.com/')) fail('C', `${f}: ảnh ngoài không phải Pexels: ${src.slice(0, 60)}`);
       if (!tag.includes('data-placeholder="pexels"')) fail('A', `${f}: ảnh Pexels thiếu data-placeholder`);
-      if (!alt || !alt.startsWith('Ảnh minh họa')) fail('A', `${f}: alt ảnh không bắt đầu bằng "Ảnh minh họa": ${alt}`);
+      if (!alt) fail('A', `${f}: ảnh thiếu alt`);
       if (!/\swidth="\d+"/.test(tag) || !/\sheight="\d+"/.test(tag)) fail('F', `${f}: ảnh thiếu width/height`);
     } else if (!src.startsWith('assets/img/')) {
       fail('C', `${f}: ảnh cục bộ ngoài assets/img: ${src}`);

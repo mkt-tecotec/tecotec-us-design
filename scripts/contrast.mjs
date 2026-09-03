@@ -33,7 +33,7 @@ const hex = (t) => '#' + linear(t.L, t.C, t.h).map((x) => Math.round((x <= 0.003
 const PAIRS = [
   ['color-ink', 'color-paper', 4.5, 'chữ thân trên giấy'],
   ['color-ink', 'color-paper-2', 4.5, 'chữ thân trên mat'],
-  ['color-ink', 'color-paper-3', 4.5, 'chữ thân trên khối chờ duyệt, banner'],
+  ['color-ink', 'color-paper-3', 4.5, 'chữ thân trên khối chờ duyệt, dải ghi chú hub'],
   ['color-ink-2', 'color-paper', 4.5, 'chữ phụ trên giấy'],
   ['color-ink-2', 'color-paper-3', 4.5, 'chữ phụ trên khối chờ duyệt'],
   ['color-muted', 'color-paper', 4.5, 'caption trên giấy'],

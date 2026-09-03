@@ -6,7 +6,7 @@ Xem trực tiếp: https://mkt-tecotec.github.io/tecotec-us-design/ (mục lục
 
 ## Quy tắc cứng
 
-- Ảnh chỉ là ảnh minh họa tạm từ Pexels, không có ảnh tác phẩm thật. Mọi ảnh đều ghi rõ điều đó.
+- Ảnh chỉ là ảnh tạm từ Pexels, không có ảnh tác phẩm thật; đánh dấu bằng `alt` và `data-placeholder`, không hiện nhãn trên giao diện.
 - Không câu chữ về thẩm định hay kiểm định. Chỗ nào liên quan là khối chờ duyệt có nhãn `[verify]`.
 - Không giá, không giỏ hàng, không nút mua. Trưng bày để xem, không bán.
 - Nội dung chỉ tiếng Việt. Không em dash.
@@ -21,7 +21,7 @@ index.html                 mục lục demo, cây trang, địa chỉ dự kiế
 header/ footer/            mảnh header và footer, sinh từ cùng partial (đối chiếu với tumiki-design)
 assets/css/tokens.css      nguồn duy nhất của màu, chữ, khoảng cách
 assets/css/style.css       toàn bộ style, chỉ dùng var(--*)
-assets/js/main.js          banner nháp thu lên khi cuộn, nút Mục lục trên màn hình hẹp
+assets/js/main.js          nút Mục lục trên màn hình hẹp
 assets/img/                logo TECOTEC Group (vendor) và mark tách riêng
 data/                      dữ liệu mẫu theo tên trường WooCommerce/ACF, xem data/FIELDS.md
 src/                       thư viện và template

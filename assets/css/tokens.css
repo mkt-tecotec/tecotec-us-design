@@ -6,7 +6,7 @@
   /* giấy */
   --color-paper:        oklch(96.5% 0.010 82);   /* #F7F3EC ivory */
   --color-paper-2:      oklch(93.5% 0.012 80);   /* #EEE9E1 mat sau ảnh */
-  --color-paper-3:      oklch(90.0% 0.014 78);   /* #E3DDD4 khối chờ duyệt, banner nháp */
+  --color-paper-3:      oklch(90.0% 0.014 78);   /* #E3DDD4 khối chờ duyệt, dải ghi chú hub */
 
   /* mực */
   --color-ink:          oklch(20.0% 0.010 53);   /* #1A1512 */
@@ -88,8 +88,8 @@
   --rule-gilt:  2px;
 
   /* chrome */
-  --draft-h: 44px;
   --bar-h:   72px;
+  --strip-h: 44px;
   --z-base: 1;
   --z-raised: 10;
   --z-sticky: 200;

@@ -20,8 +20,7 @@ export function render({ page, data, work }) {
           <p class="pieces__no num">${ROMAN[i] || i + 1}${piece.slug === w.slug ? ' · tấm này' : ''}</p>
         </div>`))}
       </div>
-      <p class="plate__cap">Ảnh minh họa tạm (Pexels), không phải ảnh tác phẩm. Bộ ${set.length} tấm, đang xem tấm ${w.tw_set_position}.</p>
-      <span class="chip chip--muted caps plate__tag">Ảnh minh họa</span>`
+      <p class="plate__cap">Bộ ${set.length} tấm, đang xem tấm ${w.tw_set_position}.</p>`
     : plate({ data, slot: w.images[0].slot, ar, priority: true, sizes: '(max-width: 60rem) 100vw, 66vw' });
 
   const related = creator
@@ -34,7 +33,6 @@ export function render({ page, data, work }) {
     <div class="spread__text">
       <div class="tombstone">
         ${label(w, data, { ownership })}
-        <p class="label__note">Ảnh minh họa, không phải tác phẩm thật. Số đo lấy từ dữ liệu mẫu.</p>
         ${ownership ? ask({ question: 'Có nêu tình trạng sở hữu trên trang tác phẩm không? Ba lựa chọn: thuộc bộ sưu tập, ký gửi, hoặc không nêu.', back: 'artworks-detail.html', codes: page.asks }) : ''}
       </div>
     </div>
@@ -46,9 +44,8 @@ export function render({ page, data, work }) {
   ${details.length ? html`<section class="section" aria-labelledby="h-details">
     ${head('Chi tiết', 2, 'h-details')}
     <div class="strip">
-      ${join(details.map((d) => plate({ data, slot: d.slot, ar: '4 / 3', caption: d.caption, sizes: '(max-width: 60rem) 50vw, 25vw', tag: true })))}
+      ${join(details.map((d) => plate({ data, slot: d.slot, ar: '4 / 3', caption: d.caption, sizes: '(max-width: 60rem) 50vw, 25vw' })))}
     </div>
-    <p class="muted stack">Ảnh chi tiết là minh họa tạm. Khi có ảnh thật, mỗi tác phẩm cần ảnh chuẩn màu và ảnh ánh sáng xiên.</p>
   </section>` : ''}
 
   <section class="section" aria-labelledby="h-note">

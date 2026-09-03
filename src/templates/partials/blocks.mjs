@@ -26,12 +26,11 @@ export const head = (text, level = 2, id = null) => raw(`<h${level} class="head"
 export const headInline = (text) => html`<h2 class="head--inline">${text}</h2>`;
 
 // Ảnh trên mat, giữ đúng tỷ lệ. ar = "w / h".
-export function plate({ data, slot, ar, alt, caption, priority = false, sizes, tag = true }) {
+export function plate({ data, slot, ar, alt, caption, priority = false, sizes }) {
   const style = ar ? raw(` style="--ar: ${ar}"`) : '';
   return html`<figure class="plate">
   <div class="plate__box"${style}>${img(data.images, data.slots, slot, { alt, priority, sizes })}</div>
-  <figcaption class="plate__cap">${caption || 'Ảnh minh họa tạm (Pexels), không phải ảnh tác phẩm.'}</figcaption>
-  ${tag ? html`<span class="chip chip--muted caps plate__tag">Ảnh minh họa</span>` : ''}
+  ${caption ? html`<figcaption class="plate__cap">${caption}</figcaption>` : ''}
 </figure>`;
 }
 
@@ -62,7 +61,7 @@ export function workCard(w, data, level = 3) {
     ${raw(`<${h} class="work__title">`)}<a href="${artworkHref(w)}">${w.title}</a>${raw(`</${h}>`)}
     <p class="work__creator">${creatorLine(w, data)}</p>
     <p class="work__meta">${workMeta(w, data)}</p>
-    <p class="work__set">${set ? html`<span class="chip chip--muted caps">Bộ ${set.length} tấm</span> ` : ''}<span class="work__tag caps">Ảnh minh họa</span></p>
+    ${set ? html`<p class="work__set"><span class="chip chip--muted caps">Bộ ${set.length} tấm</span></p>` : ''}
   </div>
 </article>`;
 }
@@ -120,7 +119,7 @@ export function mediumRow(m, data) {
       ? html`<span class="row__status chip chip--dashed caps">Giữ chỗ, chờ M5</span>`
       : html`<span class="row__status chip chip--dashed caps">Đang chuẩn bị</span>`);
   const thumb = m.public
-    ? html`<div class="row__thumb plate"><div class="plate__box" style="--ar: 4 / 5">${img(data.images, data.slots, m.image, { w: 640, sizes: '96px' })}</div><span class="row__thumb-tag caps">Ảnh minh họa</span></div>`
+    ? html`<div class="row__thumb plate"><div class="plate__box" style="--ar: 4 / 5">${img(data.images, data.slots, m.image, { w: 640, sizes: '96px' })}</div></div>`
     : html`<div class="row__thumb row__thumb--empty" aria-hidden="true"></div>`;
   const inner = html`<span class="row__name">${m.name}</span>
     <span class="row__desc">${m.description_short}</span>
