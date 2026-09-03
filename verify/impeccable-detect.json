@@ -1,0 +1,362 @@
+[
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/about.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/accessibility.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/advisory.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/art-notes.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artists-dang-van-suu.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artists-detail-anonymous.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artists-detail.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artists-khuyet-danh.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artists-le-thi-mai-hanh.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artists-ngo-bich-thao.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artists-pham-quang-dinh.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artists-tran-huu-khiem.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artists-variant-grouped.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artists-vu-minh-tue.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artists.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artworks-ao-beo.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artworks-ben-song-som.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artworks-cho-phien-vung-cao.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artworks-detail-set.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artworks-detail-variant-ownership.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artworks-detail.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artworks-dinh-lang.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artworks-pho-co-mua-dong.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artworks-ruong-bac-thang.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artworks-thieu-nu-va-hoa-sen.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artworks-tu-binh-dong.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artworks-tu-binh-ha.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artworks-tu-binh-thu.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artworks-tu-binh-xuan.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/artworks-vuon-chuoi-sau-mua.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/collection-lacquer-paintings.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/collection-variant-ceramics.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/collection.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/contact.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/copyright-image-rights.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/home-variant-advisory.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/home.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/index.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/privacy-policy.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  },
+  {
+    "antipattern": "single-font",
+    "name": "Single font for everything",
+    "description": "Only one font family is used for the entire page. Pair a distinctive display font with a refined body font to create typographic hierarchy.",
+    "severity": "warning",
+    "file": "/Users/tuyenpv16/Developer/tecotec-us/design/terms-of-use.html",
+    "line": 11,
+    "snippet": "only font used is archivo"
+  }
+]

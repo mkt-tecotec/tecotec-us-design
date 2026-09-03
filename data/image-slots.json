@@ -1,0 +1,123 @@
+{
+  "hero-home": {
+    "query": "gilded surface close up",
+    "orientation": "portrait",
+    "alt_vi": "Ảnh minh họa, bề mặt thếp vàng trên nền tối",
+    "pick": 0
+  },
+  "home-gallery": {
+    "query": "empty exhibition hall white walls",
+    "orientation": "landscape",
+    "alt_vi": "Ảnh minh họa, không gian trưng bày có ánh sáng ban ngày"
+  },
+  "medium-lacquer": {
+    "query": "black lacquer box gold pattern",
+    "orientation": "portrait",
+    "alt_vi": "Ảnh minh họa, đồ sơn mài màu son và vàng"
+  },
+  "medium-oil": {
+    "query": "oil painting canvas texture close up",
+    "orientation": "portrait",
+    "alt_vi": "Ảnh minh họa, bề mặt sơn dầu trên toan"
+  },
+  "medium-silk": {
+    "query": "hand painted silk fabric floral",
+    "orientation": "portrait",
+    "alt_vi": "Ảnh minh họa, lụa vẽ tay hoa văn"
+  },
+  "medium-ceramics": {
+    "query": "vietnamese ceramic vase",
+    "orientation": "square",
+    "alt_vi": "Ảnh minh họa, bình gốm men lam"
+  },
+  "medium-decorative": {
+    "query": "carved wooden decorative object",
+    "orientation": "portrait",
+    "alt_vi": "Ảnh minh họa, hiện vật gỗ chạm"
+  },
+  "work-01": {
+    "query": "black lacquer surface gold texture",
+    "orientation": "landscape",
+    "alt_vi": "Ảnh minh họa cho tác phẩm Bến sông sớm"
+  },
+  "work-02": {
+    "query": "banana leaves rain dark green",
+    "orientation": "portrait",
+    "alt_vi": "Ảnh minh họa cho tác phẩm Vườn chuối sau mưa"
+  },
+  "work-03": {
+    "query": "vermilion red pigment texture",
+    "orientation": "landscape",
+    "alt_vi": "Ảnh minh họa cho tác phẩm Chợ phiên vùng cao"
+  },
+  "work-04": {
+    "query": "peach blossom branch dark background",
+    "orientation": "portrait",
+    "alt_vi": "Ảnh minh họa cho tác phẩm Tứ bình: Xuân"
+  },
+  "work-05": {
+    "query": "lotus pond dark water",
+    "orientation": "portrait",
+    "alt_vi": "Ảnh minh họa cho tác phẩm Tứ bình: Hạ"
+  },
+  "work-06": {
+    "query": "golden autumn leaves dark background",
+    "orientation": "portrait",
+    "alt_vi": "Ảnh minh họa cho tác phẩm Tứ bình: Thu"
+  },
+  "work-07": {
+    "query": "bare tree branches winter fog",
+    "orientation": "portrait",
+    "alt_vi": "Ảnh minh họa cho tác phẩm Tứ bình: Đông"
+  },
+  "work-08": {
+    "query": "white lotus flower dark background",
+    "orientation": "portrait",
+    "alt_vi": "Ảnh minh họa cho tác phẩm Thiếu nữ và hoa sen"
+  },
+  "work-09": {
+    "query": "hanoi old quarter street",
+    "orientation": "landscape",
+    "alt_vi": "Ảnh minh họa cho tác phẩm Phố cổ mùa đông"
+  },
+  "work-10": {
+    "query": "vietnamese temple roof tiles",
+    "orientation": "landscape",
+    "alt_vi": "Ảnh minh họa cho tác phẩm Đình làng"
+  },
+  "work-11": {
+    "query": "duckweed pond green texture",
+    "orientation": "square",
+    "alt_vi": "Ảnh minh họa cho tác phẩm Ao bèo"
+  },
+  "work-12": {
+    "query": "rice terraces aerial",
+    "orientation": "landscape",
+    "alt_vi": "Ảnh minh họa cho tác phẩm Ruộng bậc thang"
+  },
+  "detail-raking": {
+    "query": "cracked lacquer texture macro",
+    "orientation": "landscape",
+    "alt_vi": "Ảnh minh họa, bề mặt sơn dưới ánh sáng xiên"
+  },
+  "detail-gold": {
+    "query": "gold foil texture macro",
+    "orientation": "landscape",
+    "alt_vi": "Ảnh minh họa, lớp vàng quỳ"
+  },
+  "detail-eggshell": {
+    "query": "eggshell mosaic texture",
+    "orientation": "landscape",
+    "alt_vi": "Ảnh minh họa, mảnh vỏ trứng gắn trên nền sơn"
+  },
+  "detail-pearl": {
+    "query": "abalone shell iridescent close up",
+    "orientation": "landscape",
+    "alt_vi": "Ảnh minh họa, khảm vỏ trai"
+  },
+  "detail-back": {
+    "query": "old wooden panel texture back",
+    "orientation": "landscape",
+    "alt_vi": "Ảnh minh họa, mặt sau tấm vóc gỗ"
+  }
+}

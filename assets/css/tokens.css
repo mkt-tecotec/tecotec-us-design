@@ -1,0 +1,97 @@
+/* tecotec.us · tokens.css · nguồn duy nhất của màu, chữ, khoảng cách.
+ * Bảng màu: KDB "02 - Nghiên cứu website tham chiếu & Moodboard thị giác" mục 4 (chưa duyệt).
+ * Mọi màu và font trong style.css phải đi qua var(--*). Không thêm giá trị thô ở nơi khác.
+ */
+:root {
+  /* giấy */
+  --color-paper:        oklch(96.5% 0.010 82);   /* #F7F3EC ivory */
+  --color-paper-2:      oklch(93.5% 0.012 80);   /* #EEE9E1 mat sau ảnh */
+  --color-paper-3:      oklch(90.0% 0.014 78);   /* #E3DDD4 khối chờ duyệt, banner nháp */
+
+  /* mực */
+  --color-ink:          oklch(20.0% 0.010 53);   /* #1A1512 */
+  --color-ink-2:        oklch(38.0% 0.053 49);   /* #5A3A29 nâu cánh gián, chữ phụ */
+  --color-muted:        oklch(47.0% 0.022 52);   /* #655850 caption, metadata */
+  --color-neutral:      oklch(58.0% 0.016 58);   /* #827871 chỉ chữ lớn hoặc phi văn bản */
+
+  /* kẻ */
+  --color-rule:         oklch(78.0% 0.010 80);   /* #BBB7B0 bạc quỳ */
+  --color-rule-2:       oklch(85.0% 0.010 80);   /* #D1CDC7 */
+
+  /* nhấn */
+  --color-accent:       oklch(42.0% 0.145 26);   /* #8B1E1E đỏ son, tối đa 5% viewport */
+  --color-accent-ink:   var(--color-paper);
+  --color-accent-2:     oklch(67.5% 0.121 86);   /* #B8912F vàng quỳ, chỉ dùng cho kẻ mạ */
+  --color-focus:        oklch(52.0% 0.190 27);   /* #BE2323 */
+
+  /* mặt tối duy nhất */
+  --color-surface-deep: oklch(38.0% 0.053 49);   /* #5A3A29 footer; chữ trên đó là paper */
+  --color-focus-on-deep: var(--color-paper);
+
+  /* chữ */
+  --font-display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-body:    "Public Sans", "Helvetica Neue", Arial, sans-serif;
+  --wdth-title:   125%;
+  --wdth-label:   62%;
+  --wght-title:   700;
+  --wght-label:   500;
+  --wght-body:    400;
+  --wght-strong:  600;
+  --track-title:  -0.01em;
+  --track-label:  0.08em;
+  --lh-display:   1.05;
+  --lh-heading:   1.15;
+  --lh-body:      1.55;
+  --lh-label:     1.1;
+
+  /* thang cỡ 1.25 */
+  --text-xs:        0.64rem;
+  --text-sm:        0.8rem;
+  --text-base:      1rem;
+  --text-md:        1.25rem;
+  --text-lg:        1.5625rem;
+  --text-xl:        1.953rem;
+  --text-2xl:       2.441rem;
+  --text-3xl:       3.052rem;
+  --text-4xl:       3.815rem;
+  --text-display:   clamp(2.75rem, 5vw + 1rem, 5.25rem);
+  --text-display-s: clamp(2.25rem, 3.5vw + 1rem, 3.815rem);
+
+  /* khoảng cách 4pt */
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.75rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 9rem;
+  --page-max:    80rem;
+  --page-gutter: clamp(1rem, 4vw, 3rem);
+  --measure:     60ch;
+
+  /* chuyển động */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:     cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro:   120ms;
+  --dur-short:   220ms;
+  --dur-retract: 320ms;
+  --dur-long:    420ms;
+
+  /* hình */
+  --radius:     0;
+  --rule-hair:  1px;
+  --rule-heavy: 2px;
+  --rule-gilt:  2px;
+
+  /* chrome */
+  --draft-h: 40px;
+  --bar-h:   72px;
+  --z-base: 1;
+  --z-raised: 10;
+  --z-sticky: 200;
+  --z-sticky-nav: 300;
+}

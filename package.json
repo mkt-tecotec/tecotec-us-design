@@ -1,0 +1,18 @@
+{
+  "name": "tecotec-us-design",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Demo giao diện tĩnh tecotec.us (bản nháp nội bộ, không index)",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "contrast": "node scripts/contrast.mjs",
+    "images": "node scripts/pexels-fetch.mjs",
+    "serve": "python3 -m http.server 8080 --bind 127.0.0.1",
+    "all": "node scripts/build.mjs && node scripts/check.mjs && node scripts/contrast.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "tran-huu-khiem",
+    "name": "Trần Hữu Khiêm",
+    "birth_year": 1924,
+    "death_year": 1998,
+    "role": "Họa sĩ",
+    "artist_status": "approved",
+    "tw_group": null
+  },
+  {
+    "slug": "le-thi-mai-hanh",
+    "name": "Lê Thị Mai Hạnh",
+    "birth_year": 1931,
+    "death_year": 2010,
+    "role": "Họa sĩ",
+    "artist_status": "approved",
+    "tw_group": null
+  },
+  {
+    "slug": "pham-quang-dinh",
+    "name": "Phạm Quang Đĩnh",
+    "birth_year": 1946,
+    "death_year": null,
+    "role": "Họa sĩ",
+    "artist_status": "approved",
+    "tw_group": null
+  },
+  {
+    "slug": "ngo-bich-thao",
+    "name": "Ngô Bích Thảo",
+    "birth_year": 1958,
+    "death_year": null,
+    "role": "Họa sĩ",
+    "artist_status": "approved",
+    "tw_group": null
+  },
+  {
+    "slug": "dang-van-suu",
+    "name": "Đặng Văn Sửu",
+    "birth_year": 1937,
+    "death_year": 2004,
+    "role": "Họa sĩ",
+    "artist_status": "approved",
+    "tw_group": null
+  },
+  {
+    "slug": "vu-minh-tue",
+    "name": "Vũ Minh Tuệ",
+    "birth_year": 1969,
+    "death_year": null,
+    "role": "Họa sĩ",
+    "artist_status": "approved",
+    "tw_group": null
+  },
+  {
+    "slug": "hoang-kim-loan",
+    "name": "Hoàng Kim Loan",
+    "birth_year": 1952,
+    "death_year": null,
+    "role": "Họa sĩ",
+    "artist_status": "review",
+    "tw_group": null
+  },
+  {
+    "slug": "nguyen-the-bao",
+    "name": "Nguyễn Thế Bảo",
+    "birth_year": 1975,
+    "death_year": null,
+    "role": "Họa sĩ",
+    "artist_status": "draft",
+    "tw_group": null
+  }
+]

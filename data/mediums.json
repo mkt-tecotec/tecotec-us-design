@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "lacquer-paintings",
+    "name": "Sơn mài",
+    "object_class": "painting",
+    "phase": 1,
+    "public": true,
+    "image": "medium-lacquer",
+    "description_short": "Nhựa cây sơn phủ nhiều lớp lên vóc gỗ, mài phẳng giữa các lớp, điểm son, then, vàng quỳ, bạc quỳ, vỏ trứng và vỏ trai.",
+    "description": [
+      "Sơn mài dùng nhựa cây sơn, quen gọi là sơn ta, làm chất kết dính. Sơn được phủ nhiều lớp lên vóc: tấm gỗ đã bó vải, hom và sơn nền. Mỗi lớp phải khô trong độ ẩm cao rồi được mài phẳng bằng đá và nước, vì thế mà có tên sơn mài.",
+      "Màu son đỏ, then đen, vàng quỳ, bạc quỳ, vỏ trứng và vỏ trai được đặt vào giữa các lớp. Khi mài, các lớp bên dưới lộ ra thành hình. Bề mặt hoàn thiện được đánh bóng bằng tay, cho độ sâu và độ bóng đặc trưng của chất liệu.",
+      "Tranh sơn mài nặng, nhạy với thay đổi độ ẩm và nhiệt. Một tác phẩm cần hai loại ảnh: ảnh chuẩn màu để lưu trữ và ảnh ánh sáng xiên để thấy vàng bạc và lớp mài."
+    ]
+  },
+  {
+    "slug": "oil-paintings",
+    "name": "Sơn dầu",
+    "object_class": "painting",
+    "phase": 2,
+    "public": false,
+    "image": "medium-oil",
+    "description_short": "Màu dầu trên toan hoặc gỗ. Phấn màu xếp cùng nhóm này.",
+    "description": []
+  },
+  {
+    "slug": "silk-paintings",
+    "name": "Lụa",
+    "object_class": "painting",
+    "phase": 2,
+    "public": false,
+    "image": "medium-silk",
+    "description_short": "Màu nước và mực trên lụa, thường bồi lên giấy sau khi vẽ.",
+    "description": []
+  },
+  {
+    "slug": "ceramics",
+    "name": "Gốm",
+    "object_class": "ceramic",
+    "phase": null,
+    "public": false,
+    "variant_only": "ceramics",
+    "image": "medium-ceramics",
+    "description_short": "Đồ gốm và sứ, phân biệt bằng men, lò và niên đại khoảng.",
+    "description": []
+  },
+  {
+    "slug": "decorative-objects",
+    "name": "Đồ trang trí",
+    "object_class": "decorative",
+    "phase": null,
+    "public": false,
+    "variant_only": "ceramics",
+    "image": "medium-decorative",
+    "description_short": "Hiện vật ba chiều có công năng trang trí; chất liệu và xưởng ghi theo hiện vật.",
+    "description": []
+  }
+]
