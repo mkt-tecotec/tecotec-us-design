@@ -52,14 +52,14 @@ export function render({ data, generated }) {
   </header>
 
   <div class="section entry stack">
-    ${join(groups.map((g) => html`<section aria-labelledby="g-${g.label.replace(/\W+/g, '-')}">
-      ${head(g.label)}
+    ${join(groups.map((g, i) => html`<section aria-labelledby="g-${i}">
+      ${head(g.label, 2, `g-${i}`)}
       <div class="tree">${join(g.list.map((p) => row(p, data)))}</div>
     </section>`))}
   </div>
 
   <section class="section" aria-labelledby="h-gen">
-    ${head('Trang sinh từ dữ liệu')}
+    ${head('Trang sinh từ dữ liệu', 2, 'h-gen')}
     <p class="prose">Mỗi tác phẩm và mỗi người sáng tác đã duyệt có trang riêng, sinh từ cùng template với trang mẫu ở trên. Bấm bất kỳ thẻ nào trên site đều tới được.</p>
     <div class="tree stack">
       ${join(generated.map((g) => html`<a class="tree__row" href="${g.file}" data-depth="1"><span><span class="tree__name">${g.title}</span><br><span class="tree__file num">${g.file}</span></span><span class="tree__url num">${g.prod_url}</span><span class="tree__badge chip chip--muted caps">Sinh tự động</span></a>`))}
@@ -67,7 +67,7 @@ export function render({ data, generated }) {
   </section>
 
   <section class="section" aria-labelledby="h-stats">
-    ${head('Dữ liệu mẫu')}
+    ${head('Dữ liệu mẫu', 2, 'h-stats')}
     <div class="stats">
       <div><p class="stats__n">${c.artworks}</p><p class="stats__l">tác phẩm, trong đó ${c.anonymous} khuyết danh và ${c.sets} bộ nhiều tấm</p></div>
       <div><p class="stats__n">${c.artists_approved}</p><p class="stats__l">người sáng tác đã duyệt trên ${c.artists_total} trong dữ liệu</p></div>
@@ -78,7 +78,7 @@ export function render({ data, generated }) {
   </section>
 
   <section class="section" aria-labelledby="h-credits">
-    ${head('Ảnh minh họa')}
+    ${head('Ảnh minh họa', 2, 'h-credits')}
     <p class="prose">Toàn bộ ảnh là ảnh stock từ Pexels, dùng tạm cho bản demo. Nhiếp ảnh gia:</p>
     <ul class="credits stack">
       ${join(photographers.map((r) => html`<li><a href="${r.photographer_url}" rel="noopener">${r.photographer}</a></li>`))}

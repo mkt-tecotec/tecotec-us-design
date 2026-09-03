@@ -9,3 +9,7 @@ verify/screenshots/
 _old_ai_backup/
 .claude/settings.local.json
 .playwright-mcp/
+verify/lighthouse/
+verify/*.json
+verify/*.err
+verify/server.log

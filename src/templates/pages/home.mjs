@@ -23,7 +23,7 @@ export function render({ page, data }) {
 
   <section class="spread" aria-labelledby="h-mediums">
     <div class="spread__text">
-      ${head('Ba loại hình')}
+      ${head('Ba loại hình', 2, 'h-mediums')}
       <p class="prose">Bộ sưu tập xếp theo loại hình, rồi người sáng tác, rồi tác phẩm. Sơn dầu và lụa đã có chỗ trong cấu trúc, chưa có tác phẩm trưng bày.</p>
     </div>
     <div class="spread__side">
@@ -36,33 +36,33 @@ export function render({ page, data }) {
     </div>
   </section>
 
-  <section class="spread spread--wide-text" aria-labelledby="h-featured">
+  <section class="spread spread--flip" aria-labelledby="h-featured">
     <div class="spread__text">
-      ${worksGrid(featured, data, 2)}
-    </div>
-    <div class="spread__side">
-      ${head('Tác phẩm được chọn')}
+      ${head('Tác phẩm được chọn', 2, 'h-featured')}
       <p class="prose">Bốn trong ${nLacquer} tác phẩm ${lacquer.name.toLowerCase()} hiện có. Mỗi trang tác phẩm ghi số hiệu, người sáng tác, năm, chất liệu và kích thước.</p>
       <p class="stack"><a class="link" href="collection-lacquer-paintings.html">Toàn bộ sơn mài →</a></p>
+    </div>
+    <div class="spread__side">
+      ${worksGrid(featured, data, 2)}
     </div>
   </section>
 
   <section class="spread" aria-labelledby="h-artists">
     <div class="spread__text">
-      ${head('Người sáng tác')}
+      ${head('Người sáng tác', 2, 'h-artists')}
       <p class="prose">Mỗi người sáng tác có trang riêng: tên, năm sinh và năm mất, vai trò, các tác phẩm trong bộ sưu tập. Người chưa được duyệt không xuất hiện.</p>
       <p class="stack"><a class="link" href="artists.html">Danh sách người sáng tác →</a></p>
     </div>
     <div class="spread__side">
       <ul class="rows">
-        ${join(artists.map((a) => html`<li class="row"><a class="row__inner" href="${artistHref(a)}"><span class="row__name">${a.name}</span><span class="row__years num">${years(a)}</span><span class="row__role">${a.role}</span><span class="row__count">${(data.worksByArtist[a.slug] || []).length} tác phẩm</span><span class="row__arrow" aria-hidden="true">→</span></a></li>`))}
+        ${join(artists.map((a) => html`<li class="row"><a class="row__inner row__inner--compact" href="${artistHref(a)}"><span class="row__name">${a.name}</span><span class="row__years num">${years(a)}</span><span class="row__count">${(data.worksByArtist[a.slug] || []).length} tác phẩm</span><span class="row__arrow" aria-hidden="true">→</span></a></li>`))}
       </ul>
     </div>
   </section>
 
   <section class="spread" aria-labelledby="h-about">
     <div class="spread__text">
-      ${head('Về Tecotec New York LLC')}
+      ${head('Về Tecotec New York LLC', 2, 'h-about')}
       <div class="prose">
         <p>Tecotec New York LLC là pháp nhân tại Mỹ, thành viên của TECOTEC Group. Website này giới thiệu bộ sưu tập tranh Việt Nam của pháp nhân, bắt đầu từ sơn mài.</p>
         <p>Phần định vị và lý do sưu tập đang chờ Chủ tịch duyệt, xem trang Giới thiệu.</p>
@@ -76,8 +76,8 @@ export function render({ page, data }) {
 
   ${isAdvisory ? html`<section class="spread" aria-labelledby="h-advisory">
     <div class="spread__text">
-      ${head('Dịch vụ cố vấn')}
-      ${pending({ tag: 'Tư vấn và giám định', body: 'Chỗ này dành cho phần giới thiệu mảng tư vấn của pháp nhân, nếu Chủ tịch quyết định đưa lên trang chủ. Bản demo cố ý để trống, không viết câu chữ nào về năng lực chuyên môn.', blocker: 'Chờ Chủ tịch (M3) và luật sư (M11).', verify: true })}
+      ${head('Dịch vụ cố vấn', 2, 'h-advisory')}
+      ${pending({ tag: 'Dịch vụ cố vấn', body: 'Chỗ này dành cho phần giới thiệu mảng tư vấn của pháp nhân, nếu Chủ tịch quyết định đưa lên trang chủ. Bản demo cố ý để trống, không viết câu chữ nào về năng lực chuyên môn.', blocker: 'Chờ Chủ tịch (M3) và luật sư (M11).', verify: true })}
       ${ask({ question: 'Trang chủ có nên nhắc tới dịch vụ cố vấn ngay từ giai đoạn 1, hay chờ luật sư xác nhận M10 đến M13 rồi mới đưa lên?', back: 'home.html', codes: page.asks })}
     </div>
     <div class="spread__side"></div>

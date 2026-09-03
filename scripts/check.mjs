@@ -48,6 +48,10 @@ for (const f of htmlFiles) {
   if (ENGLISH_UI.test(s)) fail('A', `${f}: từ UI tiếng Anh ${s.match(ENGLISH_UI)[1]}`);
   if (NAME_TELLS.test(s)) fail('D', `${f}: tên placeholder lộ liễu`);
   if (stubFiles.has(f) && !s.includes('NỘI DUNG CHỜ DUYỆT')) fail('A', `${f}: stub thiếu nhãn NỘI DUNG CHỜ DUYỆT`);
+  if (/=&quot;/.test(s)) fail('F', `${f}: thuộc tính bị escape (=&quot;)`);
+  for (const m of s.matchAll(/aria-(?:labelledby|controls)="([^"]+)"/g)) {
+    for (const id of m[1].split(/\s+/)) if (!new RegExp(`id="${id}"`).test(s)) fail('F', `${f}: aria tham chiếu id không tồn tại: ${id}`);
+  }
   if ((s.match(/<h1\b/g) || []).length !== 1) fail('F', `${f}: số h1 khác 1`);
   if ((s.match(/<main\b/g) || []).length !== 1) fail('F', `${f}: số main khác 1`);
   if (/href="\/|src="\/(?!\/)/.test(s)) fail('E', `${f}: đường dẫn tuyệt đối (Pages chạy dưới subpath)`);

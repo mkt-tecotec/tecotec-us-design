@@ -1,0 +1,280 @@
+[MAJOR] home.html S1 | Ảnh minh họa phải ghi rõ ở mọi chỗ có ảnh (DESIGN.md §8 Do; PRODUCT.md
+   ev: home.html:78-122: bốn thẻ .work (sinh từ src/templates/partials/blocks.mjs:56-67 workCard) chỉ có alt="Ảnh minh họa cho tác phẩm ..." trên <img>, không có figcaption/chip nào nhìn thấy được. So sánh: plate() ở blocks.mjs:31-38 in cả .plate__cap lẫn chip cho he
+   fix: Trong workCard (blocks.mjs) thêm chip nhìn thấy được vào .work__label, ví dụ <span class="chip chip--muted caps">Ảnh minh họa</span>, hoặc một dòng .plate__cap dưới lưới: "Ảnh minh họa tạm (Pexels) ch
+
+[MAJOR] home.html S1 | Placeholder không được giả làm nội dung thật: tiểu sử, số liệu, ngày t
+   ev: README.md:13 ghi rõ "Tên người sáng tác và tên tác phẩm trong dữ liệu mẫu là hư cấu" và index.html:188 nói điều đó trên trang mục lục, nhưng home.html không nói ở bất kỳ đâu. Banner home.html:20 chỉ khai "Ảnh minh họa tạm, không phải ảnh tác phẩm", tức là ngầm
+   fix: Sửa src/templates/partials/header.mjs:19 thành "Trang demo nội bộ, chưa phát hành. Ảnh minh họa tạm; tên người sáng tác, tác phẩm và năm là dữ liệu mẫu hư cấu." (kèm bản ngắn ở dòng 20), và/hoặc thêm 
+
+[MAJOR] home.html S1 | Ảnh chụp kiểm chứng phải khớp file đang duyệt
+   ev: home.html:57 dùng Pexels 20610669; data/images.json hero-home → 20610669, alt_en "ornate golden plate with intricate floral patterns on display in a museum", images.json mtime 12:20. home-fold-1280x800.png (12:21:30) cho thấy đúng ảnh phù điêu mạ vàng đó, nhưn
+   fix: Build lại rồi chụp lại cả năm ảnh; cho script chụp ghi sha hoặc mtime của home.html vào verify/ để phát hiện ảnh chụp cũ.
+
+[MAJOR] home-variant-advisory.html S1 | Ảnh có thể bị hiểu là ảnh tác phẩm thật / thiếu nhãn "Ảnh minh họa" hi
+   ev: Bốn thẻ tác phẩm `.work` (home-variant-advisory.html:78-122) đặt ảnh Pexels ngay trên nhãn hồ sơ đầy đủ (SM-001 · Bến sông sớm · Trần Hữu Khiêm · 1986 · Sơn mài trên vóc · 80 × 120 cm) nhưng không có chữ "Ảnh minh họa" nào hiển thị; chữ đó chỉ nằm trong `alt` 
+   fix: Thêm nhãn hiển thị vào `workCard()` (ví dụ `<p class="work__meta">Ảnh minh họa tạm</p>` hoặc chip `chip--muted caps` "Ảnh minh họa" ngay dưới `.plate__box`), rebuild toàn bộ trang có lưới tác phẩm (ho
+
+[MAJOR] home-variant-advisory.html S1 | Từ vựng thẩm định/giám định (hard rule AGENTS.md)
+   ev: home-variant-advisory.html:166 `<p class="pending__tag caps">Tư vấn và giám định · NỘI DUNG CHỜ DUYỆT</p>` (nguồn: src/templates/pages/home.mjs:80 `tag: 'Tư vấn và giám định'`). Nằm trong `data-verify` nên qua được check.mjs:41-46, nhưng đây là lần duy nhất ch
+   fix: Đổi `tag` trong home.mjs:80 thành "Dịch vụ cố vấn" hoặc "Mô tả dịch vụ" (đồng bộ với advisory.html và pages.json), giữ `data-verify` và dòng [verify]. Nếu Chủ tịch thật sự muốn hỏi về mảng giám định t
+
+[MAJOR] home-variant-advisory.html S1 | Placeholder giả làm nội dung thật (tên, năm sinh/mất, số hiệu, kích th
+   ev: Dữ liệu là hư cấu (index.html:188 "Tên người sáng tác và tên tác phẩm trong dữ liệu mẫu là hư cấu", README.md:13) nhưng trên trang này không có dòng nào nói vậy: banner (dòng 20-21) và footer (dòng 186) chỉ nói ảnh là minh họa. Hàng người sáng tác (dòng 139) h
+   fix: Thêm một mệnh đề vào banner hoặc đoạn cuối footer (src/templates/partials/footer.mjs:20): "Tên người sáng tác, tác phẩm và số liệu là dữ liệu mẫu hư cấu." Rebuild toàn site.
+
+[MAJOR] collection.html S3 | a11y: giá trị aria-current
+   ev: collection.html:37 và :42 ghi `aria-current=&quot;page&quot;` (giá trị không có ngoặc kép bao ngoài, ngoặc kép nằm trong entity). Parse bằng html.parser cho ra giá trị `"page"` kèm hai ký tự ngoặc kép. Theo ARIA 1.2, giá trị không nằm trong danh sách token bị 
+   fix: Sửa template build để xuất `aria-current="page"` (ngoặc kép thật bao ngoài, không escape nội dung). Dọn luôn `class=" is-active"` thành `class="is-active"` và bỏ `class=""`. Kiểm tra lại bằng grep `&q
+
+[MAJOR] collection.html S3 | vùng chạm ≥44px (PRODUCT.md, mục Accessibility)
+   ev: Link "Về mục lục →" trong banner nháp: style.css:120 `.draft .wrap { line-height: 1 }` + style.css:132 `.draft__link { font-size: var(--text-sm) }` (12.8px) + `.link { display: inline-block }` ⇒ hộp link cao ≈13px, rộng ≈80px, dù banner cao 40px. Ở 375 đây là 
+   fix: `.draft__link { display: inline-flex; align-items: center; min-height: var(--draft-h); }` và nâng `--draft-h` lên 44px (tokens.css:91), hoặc thêm `padding-block` để hộp link phủ hết chiều cao banner. 
+
+[MAJOR] collection.html S1 | Hard rule: verify before you say done (AGENTS.md). Ảnh chụp và HTML đe
+   ev: mtime: verify/screenshots/collection-375.png 12:17:49 và collection-1280.png 12:18:27 < assets/css/style.css 12:22:16 (git diff chưa commit thêm dòng `.draft .caps { white-space: nowrap; }` ở style.css:122) < collection.html 12:22:19 (build) < src/templates/pa
+   fix: Chạy lại `npm run all` (build + check + contrast), chụp lại screenshots sau build, commit toàn bộ diff đang treo rồi mới mở vòng phản biện. Thêm vào scripts/check.mjs một cổng: FAIL nếu bất kỳ src/**/
+
+[MAJOR] collection.html S1 | DESIGN.md Luật Vàng Quỳ: mỗi trang đúng một đường kẻ mạ 2px mở khối ch
+   ev: assets/css/style.css:202 `.entry { border-top: var(--rule-gilt) solid var(--color-accent-2) }` bị đè bởi style.css:272 `.rows { border-top: var(--rule-hair) solid var(--color-rule) }` (cùng độ ưu tiên 0,1,0, khai báo sau thắng). Phần tử collection.html:53 là `
+   fix: Thêm sau style.css:299 một khai báo cụ thể hơn: `.rows.entry, .spec.entry { border-top: var(--rule-gilt) solid var(--color-accent-2); }` (hoặc chuyển `.entry` xuống cuối phần khối trang). Rebuild, chụ
+
+[MAJOR] home.html S3 | aria-references / landmarks
+   ev: home.html:64 aria-labelledby="h-mediums", :76 "h-featured", :131 "h-artists", :144 "h-about" — grep of id= in home.html returns only menu-panel (:41), main (:46) and h-hero (:51). The four h2 at :66, :125, :133, :146 carry no id, so 4 of 5 sections have a dang
+   fix: Add id="h-mediums" / "h-featured" / "h-artists" / "h-about" to the h2 at home.html:66, :125, :133, :146 (the template that emitted h-hero on :51 should emit the id on every section heading), or drop t
+
+[MAJOR] home.html S3 | reading order / heading order
+   ev: home.html:78-122 places the four <article class=work> (each with an h3, :84 :95 :106 :117) inside .spread__text, while the section's h2 "Tác phẩm được chọn" sits after them in .spread__side (:125). style.css:400-402 keeps text=1, side=2 below 60rem, so at 375 
+   fix: Put the h2 + prose + link in .spread__text and the .works grid in .spread__side (DOM: heading first). Keep the desktop mirror with a ≥60rem-only rule, e.g. `.spread--wide-text .spread__side{grid-colum
+
+[MAJOR] home.html S3 | touch-target ≥44px
+   ev: (a) .draft__link: style.css:132 gives it 12.8px text with no padding inside `.draft .wrap{line-height:1}` (:120); the anchor box is ≈13px tall — home-menu-375.png "Về mục lục →" occupies x≈262-343, y≈12-28 only. This also fails WCAG 2.2 2.5.8 (24px). (b) Deskt
+   fix: `.draft__link{display:inline-flex;align-items:center;min-height:44px}` and raise --draft-h to 44px (update main.js threshold reads offsetHeight already); `.bar__links a{padding-block:calc((44px - 1lh)
+
+[MAJOR] home.html S3 | link two-line / responsive grid
+   ev: home-1280.png rows: "Lê Thị Mai / Hạnh" x≈578-730, y≈2958-3010; "Phạm Quang / Đĩnh" y≈3110-3165; "Trần Hữu / Khiêm" y≈3198-3252 — three of six creator names break onto two lines inside the a.row__inner link. Cause: style.css:276 `minmax(0,2fr) 8rem minmax(0,1f
+   fix: On the home spread use a tighter row: `.spread .row__inner{grid-template-columns:minmax(0,3fr) 6.5rem auto auto auto}` and/or `.spread .row__name{font-size:var(--text-md)}`; or drop the role column he
+
+[MAJOR] home.html S3 | text truncation at 375
+   ev: home-375.png and home-menu-375.png banner: label wraps to two lines "BẢN / NHÁP" at x≈16-45, y≈6-30, and the mobile string is cut with an ellipsis "Bản nháp nội bộ, ảnh minh ..." at x≈75-260, y≈12-28 — the words "họa tạm" (the placeholder-image disclaimer) are
+   fix: Shorten the ≤60rem string so it fits 360px next to the label and link (e.g. "Bản nháp, ảnh tạm."), or hide the caps label below 40rem like .draft__url already does (style.css:422); then recapture home
+
+[MAJOR] home.html S3 | focus not obscured / sticky header
+   ev: style.css:102-108 makes .site-top sticky (40px banner + 72px bar + 2px rule = 114px, z 300); grep across assets/css finds no scroll-padding. Tabbing backwards or to any link that is inside the viewport but under the header (e.g. a row link after scrolling) lea
+   fix: `html{scroll-padding-top:calc(var(--draft-h) + var(--bar-h) + var(--space-lg))}` (adjust when is-compact hides the banner if you want exactness; the larger value is safe).
+
+[MAJOR] home.html S3 | font-size floor 14px
+   ev: Primary nav labels are 12.8px Archivo at 62% width (home.html:37 class caps → style.css:53-61 --text-sm 0.8rem; home-1280.png x≈900-1220, y≈65-85): condensed 12.8px uppercase is the smallest, narrowest text on the page and it is the main navigation. Also `.bra
+   fix: Nav labels at 0.875rem minimum (14px) or --text-base with the condensed face; brand__member ≥0.75rem; colophon paragraphs and work__meta at 0.875rem. Keep --text-sm for chips only.
+
+[CRITICAL] collection.html S2 | Lệch hệ thống: Luật Vàng Quỳ / kẻ mạ mở khối chính (DESIGN.md:87, :92,
+   ev: Trang không có đường kẻ mạ nào. Nguyên nhân là cascade: style.css:202 `.entry { border-top: var(--rule-gilt) solid var(--color-accent-2) }` và style.css:272 `.rows { border-top: var(--rule-hair) solid var(--color-rule) }` cùng độ ưu tiên (0,1,0); `.rows` đứng 
+   fix: Chuyển khối `.entry` xuống sau `.rows` và `.spec` trong style.css, hoặc viết tường minh `.rows.entry, .spec.entry { border-top: var(--rule-gilt) solid var(--color-accent-2) }`; chụp lại và kiểm bằng p
+
+[MAJOR] collection.html S2 | Lệch hệ thống: thành phần `.row` (DESIGN.md:119 'số tác phẩm, mũi tên'
+   ev: Hàng link duy nhất của khối chính không có affordance link. collection.html:53–56 `a.row__inner--medium` chỉ chứa name/desc/status/thumb, không có `.row__arrow`; style.css:283 template `minmax(0,2fr) minmax(0,3fr) auto 6rem` không có track mũi tên. So sánh: ar
+   fix: Thêm `<span class="row__arrow" aria-hidden="true">→</span>` làm track thứ 5 (`… auto 6rem auto`) đúng spec `.row`, hoặc cho `.row__inner--medium .row__name` gạch dưới 1px/hover 2px theo C3. Giữ hàng g
+
+[MAJOR] collection.html S2 | Gate 26 (thiếu :active) + DESIGN.md:124 'mọi phần tử tương tác có defa
+   ev: style.css:361–363 `.colophon a` chỉ có hover và focus-visible; style.css:188–196 `.bar__panel a` chỉ có hover và is-active. Không có `a:active` chung (style.css:29 chỉ đặt color/text-decoration). Trên collection.html điều này chạm 10 link footer (collection.ht
+   fix: Thêm `.colophon a:active { text-decoration-thickness: 2px; color: var(--color-paper-3); }` (không dùng ink-2 trên nền nâu, Luật Cánh Gián) và `.bar__panel a:active { background: var(--color-paper-3); 
+
+[MAJOR] collection-variant-ceramics.html S1 | Chỗ chưa duyệt phải nói là chưa duyệt và nêu câu hỏi chặn
+   ev: collection-variant-ceramics.html:69 và :75 gắn chip "Đang chuẩn bị" cho Gốm và Đồ trang trí, giống hệt chip của Sơn dầu/Lụa ở :60 và :63. Nhưng data/mediums.json ghi ceramics và decorative-objects có "phase": null, "variant_only": "ceramics", còn oil/silk có "
+   fix: Với medium có phase null, không render "Đang chuẩn bị" (đó là tuyên bố có kế hoạch mà dữ liệu không xác nhận). Dùng chip "Giữ chỗ · chờ M5" hoặc thêm một dòng .pending__blocker ngay dưới h2 Gốm và Đồ 
+
+[MAJOR] home-variant-advisory.html S3 | Dấu tiếng Việt bị cắt (banner nháp)
+   ev: home-variant-advisory-1280.png, banner nháp, vùng x≈330-360 y≈10-30: 'Ảnh minh họa tạm' hiện thành 'Anh minh họa tạm', dấu hỏi trên chữ A hoa bị cắt phẳng ở mép trên (cùng lỗi ở home-fold-1280x800.png và home-tab5-1280.png, cùng toạ độ). Nguyên nhân: style.css
+   fix: Cho `.draft__text` (và `.draft__text--short`) `line-height: 1.35` (flex đã canh giữa nên banner vẫn 40px), hoặc đổi sang `overflow: clip; overflow-clip-margin: 0.35em` để giữ ellipsis mà không xén dấu
+
+[MAJOR] home-variant-advisory.html S3 | ARIA hợp lệ / landmark có tên
+   ev: 5 trong 6 section trỏ `aria-labelledby` tới id không tồn tại: html:64 h-mediums, :76 h-featured, :131 h-artists, :144 h-about, :162 h-advisory; các h2 tương ứng ở html:66, 125, 133, 146, 164 không có id (grep `id="h-` chỉ ra html:51 h-hero). Cùng lỗi ở home.ht
+   fix: Trong home.mjs gắn `id="h-mediums"`, `h-featured`, `h-artists`, `h-about`, `h-advisory` lên đúng h2 của mỗi section (hoặc bỏ aria-labelledby nếu không muốn region), rồi build lại cả home.html và home-
+
+[MAJOR] home-variant-advisory.html S3 | Thứ tự heading và thứ tự đọc (chữ trước ảnh)
+   ev: Section 'Tác phẩm được chọn' (html:76-129) đặt lưới 4 tác phẩm (h3 ×4) trong `.spread__text` và h2 + đoạn dẫn + link trong `.spread__side`. DOM: bốn h3 đứng TRƯỚC h2 của chúng (h3 rơi vào dưới h2 'Ba loại hình' trong outline). Ở 375 hiển thị đúng như DOM: home
+   fix: Trong home.mjs cho `.spread--wide-text`: đặt h2 + đoạn dẫn vào `.spread__text` phía trên lưới (hoặc một header span cả hai cột), link 'Toàn bộ sơn mài →' giữ ở cuối; nếu muốn giữ bố cục 1280 (lưới trá
+
+[MAJOR] home-variant-advisory.html S3 | Responsive ≤60rem: hàng người sáng tác
+   ev: home-variant-advisory-375.png y≈4260-4483 (hàng Đặng Văn Sửu): tên y≈4295, '1937–2004' y≈4337, 'Họa sĩ' y≈4378, '4 tác phẩm' y≈4418, mũi tên '→' MỘT MÌNH trên dòng thứ 5 ở x≈320-335 y≈4460; mỗi hàng ~223px, 6 hàng = ~1340px cuộn. Nguyên nhân: style.css:404-406
+   fix: Trong media ≤60rem thêm `.row__arrow { grid-column: 2; grid-row: 1; }` (hoặc dùng grid-template-areas) và `row-gap: var(--space-2xs)` cho `.row__inner`; cân nhắc gộp năm · vai trò · số tác phẩm thành 
+
+[MAJOR] home-variant-advisory.html S3 | Vùng chạm ≥44px (PRODUCT.md) / target size
+   ev: (1) Link 'Về mục lục →' (html:23): `.link{display:inline-block}` style.css:71 + `.draft__link{font-size:0.8rem}` :132 + `line-height:1` kế thừa từ :115-121 → hộp bấm cao 12.8px trong banner 40px, thấy ở home-variant-advisory-375.png x≈275-355 y≈12-26. (2) Foot
+   fix: `.draft__link{display:inline-flex;align-items:center;min-height:var(--draft-h)}`; `.colophon__links a{display:inline-block;padding-block:var(--space-xs)}` (hoặc chuyển thành ul flex-wrap gap 8px); `.b
+
+[MAJOR] home-variant-advisory.html S3 | Sticky header che phần tử được focus / scroll-padding
+   ev: `.site-top` sticky cao 40+72+2 = 114px (style.css:102-109, tokens.css:91-92) nhưng grep không thấy `scroll-padding` hay `scroll-margin` ở đâu. Shift+Tab từ dưới lên: trình duyệt cuộn phần tử vừa focus tới mép trên viewport → nằm dưới header (WCAG 2.2 2.4.11, A
+   fix: `html { scroll-padding-top: calc(var(--draft-h) + var(--bar-h) + var(--space-md)); }`; trong main.js lắng nghe `focusin` trên `.draft` và bỏ `is-compact`; cân nhắc đặt `scroll-margin-top` cho `.row__i
+
+[CRITICAL] home-variant-advisory.html S2 | DESIGN.md §6 'Dưới 60rem mọi spread xếp dọc, chữ trước ảnh' (lệch hệ t
+   ev: home-variant-advisory.html:76-129: section 'Tác phẩm được chọn' đặt lưới .works--2 trong .spread__text và h2 + prose + link trong .spread__side. style.css:400-402 gán order theo tên class (.spread__text order 1, .spread__side order 2), nên ở 375px bốn plate hi
+   fix: Giữ DOM text-trước: h2 + prose + link vào .spread__text, lưới vào .spread__side. Ở >=60rem cho biến thể .spread--wide-text đảo cột bằng grid-column (spread__side grid-column 1, grid-row 1; spread__tex
+
+[MAJOR] home-variant-advisory.html S2 | Gate 26 (thiếu hover/focus/active) + DESIGN.md §5 'mọi phần tử tương t
+   ev: style.css:267 chỉ style .work__creator (màu nâu, 600), KHÔNG có rule nào cho .work__creator a; style.css:29 đặt a { text-decoration: none }. Hệ quả: 4 link tên người sáng tác trong thẻ tác phẩm (html:85, 96, 107, 118) trông y hệt chữ thường, hover không đổi gì
+   fix: Thêm .work__creator a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em } + :hover 2px + :active { color: var(--color-ink) }; .work__plate:active .plate__box {
+
+[MAJOR] home-variant-advisory.html S2 | DESIGN.md §8 Do 'ghi Ảnh minh họa ở mọi chỗ có ảnh' + PRODUCT.md 'nói 
+   ev: Trang có 6 ảnh nội dung: 2 plate (html:56-60, 154-158) có caption + chip; 4 thẻ tác phẩm (html:78-122) KHÔNG có bất kỳ nhãn nhìn thấy nào, chỉ alt. Banner nháp thu lên khi cuộn xuống (main.js:30-31), nên khi người xem đứng ở lưới tác phẩm (a-s3.png 48,0-701,90
+   fix: Thêm một dòng .work__cap 'Ảnh minh họa' (text-sm, muted) dưới .work__meta trong template thẻ tác phẩm, hoặc một câu ghi chú duy nhất ngay trên lưới: 'Ảnh minh họa tạm (Pexels) cho cả bốn tác phẩm.' Áp
+
+[MAJOR] home-variant-advisory.html S2 | A11y / execution (gate 33 tinh thần; PRODUCT.md WCAG 2.1 AA): aria-lab
+   ev: home-variant-advisory.html:64, 76, 131, 144, 162 khai báo aria-labelledby="h-mediums|h-featured|h-artists|h-about|h-advisory" nhưng các h2 tương ứng (html:66, 125, 133, 146, 164) không có id; chỉ h-hero (html:51) tồn tại. 5/6 section không có accessible name, 
+   fix: Trong helper sinh section, emit id trên .head trùng với giá trị aria-labelledby (hoặc bỏ aria-labelledby và dùng section có h2 đứng đầu). Thêm cổng check.mjs: mọi aria-labelledby/aria-controls phải re
+
+[MAJOR] home-variant-advisory.html S2 | DESIGN.md §3 'Tối đa 5 cỡ một trang' (lệch hệ thống, thang cỡ)
+   ev: Ở 1280 trang dùng 6 cỡ: --text-display (.title, style.css:214), --text-lg (.head:203, .row__name:286), --text-md (.lede:218, .work__title:264, .ask__q:352, .brand__wordmark:151), --text-base (body:23), --text-sm (.caps:57, .work__meta, .plate__cap, .colophon p
+   fix: Đưa .brand__member lên --text-sm (0.8rem) rồi kiểm lại chiều cao bar 72px; hoặc sửa DESIGN.md §3 ghi rõ 'không tính chrome (banner, bar, footer)'. Chọn một, ghi thành quyết định.
+
+[MAJOR] home-variant-advisory.html S2 | Gate 49 / execution: chữ trong hàng link xuống hai dòng ở 1280
+   ev: a-s4.png: 'Lê Thị Mai / Hạnh' (579,355)-(730,410), 'Phạm Quang / Đĩnh' (579,510)-(770,565), 'Trần Hữu / Khiêm' (579,598)-(712,652): 3/6 tên người sáng tác gãy giữa tên ở viewport duyệt chính. Nguyên nhân: .row__inner 5 cột (style.css:276) nhét vào cột 7fr ≈653
+   fix: Trên trang chủ dùng biến thể .row__inner--compact: minmax(0,3fr) auto auto auto, ẩn .row__role khi mọi hàng cùng vai trò (không mang thông tin), hoặc đổi cột năm 8rem thành auto. Kiểm lại ở 1280 và 10
+
+[MAJOR] collection-lacquer-paintings.html S1 | Ảnh minh họa: ảnh có thể bị hiểu là ảnh tác phẩm thật / thiếu nhãn nhì
+   ev: Trên trang này chữ "Ảnh minh họa" chỉ tồn tại ở (a) alt của 12 img (dòng 58, 69, 80, 91, 102, 113, 124, 135, 146, 157, 168, 179), người xem bằng mắt không thấy; (b) banner nháp dòng 20-21, nhưng banner bị kéo lên khỏi màn hình khi cuộn xuống (assets/css/style.
+   fix: Trong src/templates/pages/collection-medium.mjs thêm một dòng nhìn thấy ngay dưới `.count` (dòng 50 HTML) hoặc đầu section lưới: "Ảnh trong lưới là ảnh minh họa tạm từ Pexels, không phải ảnh tác phẩm.
+
+[MAJOR] collection-lacquer-paintings.html S1 | Placeholder giả làm nội dung thật: tên, năm, kích thước bịa không được
+   ev: 12 thẻ tác phẩm ghi tên người sáng tác, năm và kích thước với giọng vựng tập (vd dòng 63-64 "Trần Hữu Khiêm", "1986 · Sơn mài trên vóc · 80 × 120 cm"; dòng 184-185 "Vũ Minh Tuệ", "2016 · ... · 90 × 180 cm"). Toàn bộ là hư cấu theo data/FIELDS.md ("tên trong de
+   fix: Sửa chuỗi banner ở src/templates/partials/header.mjs:19 (và bản ngắn `draft__text--short`) thành ví dụ: "Trang demo nội bộ, chưa phát hành. Ảnh minh họa tạm; tên người sáng tác, tên và số liệu tác phẩ
+
+[MAJOR] Đồ S2 | Hierarchy (trục B) + DESIGN.md §3 'Tối đa 5 cỡ một trang'
+   ev: Đầu nhóm h2 nhỏ hơn tên hàng nằm trong nó: style.css:203 `.head { font-size: var(--text-lg) }` = 25px, style.css:287 `.row__inner--medium .row__name { font-size: var(--text-xl) }` = 31.25px. Ảnh 1280: 'Tranh' (x48,y≈388) nhỏ hơn 'Sơn mài' (x48,y≈503); 'Gốm' h2
+   fix: Đổi đầu nhóm sang kiểu Label đã có trong hệ thống (`.head--inline`, Condensed viết hoa, text-sm, đang dùng ở 8 trang khác): cha nhỏ hơn con về cỡ nhưng khác thanh ghi nên đọc đúng thứ bậc, và khối chí
+
+[MAJOR] Đồ S2 | 26 (thiếu :active) + DESIGN.md §5 'mọi phần tử tương tác có default, h
+   ev: style.css:361-363 `.colophon a` chỉ có hover (2px) và focus-visible, không có `:active`. style.css:188-196 `.bar__panel a` (menu Mục lục ở ≤60rem, tức chính là nav trên ảnh 375) chỉ có hover, không có `:active`. `.link:active` (style.css:80) không áp dụng vì h
+   fix: Thêm `.colophon a:active { color: var(--color-paper-2); }` (giữ Luật Cánh Gián: không đỏ trên nâu) và `.bar__panel a:active { background: var(--color-paper-3); }` cho khớp `a.row__inner:active`.
+
+[MAJOR] artists.html S1 | Ngoài lens S1, DESIGN.md §2 Luật Vàng Quỳ (mỗi trang đúng một đường kẻ
+   ev: artists.html:53 dùng <ul class="rows entry">. style.css:202 .entry { border-top: var(--rule-gilt) solid var(--color-accent-2) } bị style.css:272 .rows { border-top: var(--rule-hair) solid var(--color-rule) } đè vì cùng độ đặc hiệu và khai báo sau. Ảnh artists-
+   fix: Trong style.css thêm luật đặc hiệu hơn sau .rows: .rows.entry { border-top: var(--rule-gilt) solid var(--color-accent-2); } (hoặc chuyển khối .entry xuống sau .rows). Build lại và chụp lại artists-128
+
+[MAJOR] Đồ S3 | html-validity / aria-current
+   ev: collection-variant-ceramics.html:37 và :42 phát ra `aria-current=&quot;page&quot;` (giá trị không có dấu nháy bao, chứa &quot;). Tokenizer HTML giải mã thành giá trị `"page"` kèm hai dấu nháy: parse error, và giá trị không thuộc tập page|step|location|date|tim
+   fix: header.mjs:11: bọc raw(): `${page.nav === n.key ? raw(' aria-current="page"') : ''}` (hoặc viết attr tĩnh với điều kiện ngoài template). Thêm vào check.mjs một assert `!/=&quot;/.test(html)` cho mọi f
+
+[MAJOR] Đồ S3 | text-clipping / dấu tiếng Việt
+   ev: Ảnh 1280 (1265×2030): trong banner nháp, chữ "Ảnh minh họa tạm" tại x≈330–350, y≈6–26 hiện thành "Anh": dấu hỏi trên chữ A hoa bị cắt phẳng ở mép trên hộp (còn một vệt nhỏ). So với cùng từ ở footer x≈260–285, y≈1950–1980 dấu hỏi đầy đủ. Nguyên nhân: style.css:
+   fix: Bỏ cắt ink theo chiều dọc: `.draft__text { line-height: 1.3; }` (hoặc `.draft .wrap { line-height: 1.3; padding-block: var(--space-2xs) }`) và giữ ellipsis chỉ theo chiều ngang; hoặc thay `overflow: h
+
+[MAJOR] Đồ S3 | touch-target ≥ 44px (PRODUCT.md:38)
+   ev: PRODUCT.md:38 hứa "Mọi phần tử tương tác cao tối thiểu 44px". Thực tế: (1) link nav desktop style.css:160-167: 12.8px × line-height 1 + padding-block 8px + viền 2px ≈ 31px, vùng bấm chỉ là hộp link dù bar cao 72px; hiện ở mọi màn ≥60rem kể cả iPad ngang 1024px
+   fix: Nav: `.bar__links a { display:inline-flex; align-items:center; min-height:44px; padding-block:0 }` (gạch dưới active chuyển sang pseudo-element để không đội chiều cao). Banner link: `display:inline-fl
+
+[MAJOR] Đồ S3 | evidence-freshness
+   ev: Ảnh chụp (375: 12:17:50, 1280: 12:18:28) cũ hơn style.css (12:22:16) và HTML build (12:22:19); header.mjs (12:26:15) lại mới hơn HTML build. Hệ quả cụ thể: (a) ảnh 375 x≈16–44, y≈8–30 và home-menu-375 cho thấy nhãn "BẢN NHÁP" gãy hai dòng, trái với style.css:1
+   fix: Rebuild rồi chụp lại cả hai viewport trước khi ký S3; thêm bước trong verify: fail nếu mtime ảnh chụp < mtime css/html. Khôi phục `aria-label="tecotec.us, trang chủ"` vào header.mjs:33 (hoặc quyết địn
+
+[MAJOR] collection-lacquer-paintings.html S3 | ARIA hợp lệ (aria-current trên link đang active)
+   ev: collection-lacquer-paintings.html:37 và :42 ghi `aria-current=&quot;page&quot;` (od: a r i a - c u r r e n t = & q u o t ; p a g e & q u o t ;). Giá trị thuộc tính không có ngoặc nên parser giải mã thực thể thành chuỗi `"page"` kèm hai dấu nháy thật, không phả
+   fix: Sửa template nav để in nguyên văn `aria-current="page"` (đừng đưa chuỗi có dấu nháy qua bộ autoescape; đặt dấu nháy trong template, chỉ nội suy giá trị `page`). Build lại 31 trang, kiểm tra bằng grep 
+
+[MAJOR] collection-lacquer-paintings.html S3 | Thứ tự heading không nhảy cấp
+   ev: HTML :49 `<h1 class="title title--3xl">Sơn mài</h1>` rồi nhảy thẳng xuống `<h3 class="work__title">` ở :62, :73, :84, ... (12 lần). `grep -c '<h2'` = 0. `<section aria-label="Tác phẩm Sơn mài">` (:55) chỉ có aria-label, không có heading. Không có utility visua
+   fix: Cho template truyền cấp heading: trên trang loại hình render tên tác phẩm bằng `<h2 class="work__title">` (giữ h3 ở trang có h2 'Tác phẩm' phía trên). Hoặc thêm một h2 thật cho section, ví dụ dòng đếm
+
+[MAJOR] collection-lacquer-paintings.html S3 | Kích thước vùng chạm tối thiểu 44px (PRODUCT.md dòng 38)
+   ev: Link 'Về mục lục →' trong banner nháp: style.css:115-121 `.draft .wrap { line-height: 1 }`, :132 `.draft__link { font-size: var(--text-sm) }` = 12.8px, `.link` (:71-78) inline-block không padding → hộp bấm ≈ 13px cao. Ảnh collection-lacquer-paintings-375.png v
+   fix: `.draft__link { display: inline-flex; align-items: center; min-height: var(--draft-h); padding-inline: var(--space-xs); margin-block: calc(-1 * var(--space-xs)); }` để hộp bấm phủ hết chiều cao banner
+
+[MAJOR] collection-lacquer-paintings.html S3 | Ảnh chụp kiểm chứng phải mới hơn build; nhãn không xuống hai dòng ở 37
+   ev: style.css mtime 12:22:16 và collection-lacquer-paintings.html 12:22:19, trong khi collection-lacquer-paintings-375.png 12:21:34, -1280.png 12:18:33, home-menu-375.png 12:18:46: mọi ảnh chụp đều cũ hơn CSS/HTML đang được duyệt. Hệ quả nhìn thấy: ở 375 (crop m-t
+   fix: Chạy lại bộ chụp sau lần build cuối (đợi ảnh lazy tải xong rồi mới đo chiều cao trang), rồi xác nhận: 'BẢN NHÁP' một dòng ở 375, footer chụp trọn. Nếu vẫn gãy thì thêm `flex: none` cho `.draft .caps`.
+
+[MAJOR] collection-lacquer-paintings.html S3 | Link phân biệt được với chữ thường; mọi phần tử tương tác có default/h
+   ev: style.css:267 chỉ style `.work__creator` (nâu, 600); không có rule nào cho `.work__creator a` (hover, active, gạch dưới). HTML :63 `<a href="artists-tran-huu-khiem.html">Trần Hữu Khiêm</a>` và :151 `<span>Khuyết danh</span>`, :173 `<span>Hoàng Kim Loan</span>`
+   fix: Thêm `.work__creator a { text-decoration: underline; text-decoration-thickness: 1px; text-decoration-color: var(--color-rule); text-underline-offset: 0.2em; transition: text-decoration-color var(--dur
+
+[MAJOR] collection-lacquer-paintings.html S2 | Toàn vẹn build/verify (AGENTS.md 'verify before you say done'; Lightho
+   ev: File HTML đang duyệt được build lúc 12:22:19, nhưng bốn template được sửa SAU đó: src/templates/partials/blocks.mjs 12:26:11, pages/collection-medium.mjs 12:26:13 (dòng 16 gọi worksGrid(works, data, 4, 2) tức tiêu đề thẻ là h2), partials/header.mjs 12:26:15 (b
+   fix: Chạy lại node scripts/build.mjs, rồi check.mjs, contrast.mjs, Lighthouse và chụp lại 40 trang trước khi ghi 'đã sửa' vào REPORT. Đồng thời sửa layout.mjs dòng 9: fallback description dùng page.purpose
+
+[MAJOR] collection-lacquer-paintings.html S2 | Gate 26 (thiếu hover/active) + DESIGN.md §5 'mọi phần tử tương tác có 
+   ev: style.css:267 .work__creator chỉ đặt color/weight/margin; không có selector .work__creator a ở bất kỳ đâu (grep). Với a { text-decoration: none } (style.css:29), link 'Trần Hữu Khiêm' (HTML dòng 63) hiển thị y hệt span không link 'Khuyết danh' (dòng 151) và 'H
+   fix: Thêm .work__creator a { text-decoration: underline; text-decoration-thickness: var(--rule-hair); text-underline-offset: 0.2em; transition: text-decoration-thickness var(--dur-short) var(--ease-out) } 
+
+[MAJOR] collection-lacquer-paintings.html S2 | DESIGN.md §8 Do 'ghi Ảnh minh họa ở mọi chỗ có ảnh' + PRODUCT.md 'nói 
+   ev: 12 khối .plate__box (HTML 58-179) không có chú thích hay chip nhìn thấy; plate__cap = 0, plate__tag = 0 trên trang này, trong khi home.html (2/2) và artworks-ben-song-som.html (5/1) gắn 'Ảnh minh họa' ở từng plate. Câu tuyên bố duy nhất nằm ở banner nháp (dòng
+   fix: Trong workCard (blocks.mjs 56-67) thêm <p class="plate__tag"><span class="chip chip--dashed caps">Ảnh minh họa</span></p> hoặc thêm một dòng dẫn cho section lưới ngay dưới .count: 'Ảnh minh họa tạm (P
+
+[CRITICAL] artists.html S2 | Lệch hệ thống: DESIGN.md Luật Vàng Quỳ (§2, §1 'một đường kẻ mạ mở khố
+   ev: style.css:202 `.entry { border-top: var(--rule-gilt) solid var(--color-accent-2) }` và style.css:272 `.rows { border-top: var(--rule-hair) solid var(--color-rule) }` cùng độ ưu tiên (0,1,0); `.rows` đứng sau nên thắng trên `<ul class="rows entry">` (artists.ht
+   fix: Thêm sau style.css:272: `.rows.entry { border-top: var(--rule-gilt) solid var(--color-accent-2); }` (hoặc đổi `.rows` thành `.rows:not(.entry)`). Thêm vào check.mjs một cổng render (Playwright) đếm số
+
+[MAJOR] artists.html S2 | Gate 46 / DESIGN.md §8 'nói rõ chỗ chưa duyệt': lời dek nói một đằng, 
+   ev: artists.html:50 (artists.mjs:12): 'Người chưa được duyệt chỉ hiện tên.' Nhưng hàng Hoàng Kim Loan (artist_status = review, artists.json:56-63) tại artists.html:58-61 hiện thêm 'sinh 1952', 'Họa sĩ', '1 tác phẩm' (artists-1280.png y≈468, x=659/812/1129). Thêm n
+   fix: Chọn một luật và áp ở cả ba chỗ: (a) với `review` chỉ render tên + chip 'Đang chờ duyệt', bỏ years/role/count trong artists.mjs, sửa pages.json:99 thành 'người đang chờ duyệt chỉ hiện tên, nháp không 
+
+[MAJOR] artists.html S2 | Execution / DESIGN.md §5 hàng danh mục (.row): cột không thẳng hàng gi
+   ev: Mỗi `.row__inner` là một grid riêng (style.css:274-276, `minmax(0,2fr) 8rem minmax(0,1fr) auto auto`) nên hai track `auto` được đo theo từng hàng. Đo trên artists-1280.png (x đầu chữ, theo thứ tự 8 hàng): cột năm 646/659/649/648/648/649/648/647; cột vai trò 79
+   fix: Dùng subgrid: `.rows { display: grid; grid-template-columns: minmax(0,2fr) 8rem minmax(0,1fr) auto 1.5rem }` và `.row__inner { display: grid; grid-template-columns: subgrid; grid-column: 1 / -1 }` (Ch
+
+[MAJOR] artists.html S2 | AGENTS.md hard rule 'verify before you say done': ảnh chụp giao cho sk
+   ev: mtime: style.css 12:22:16, artists.html 12:22:19; artists-375.png 12:17:53, artists-1280.png 12:18:34. artists-375.png (360×2810, đã trừ 15px thanh cuộn) vùng y 0-40 vẫn hiện 'BẢN' / 'NHÁP' xuống hai dòng, trong khi REPORT-2026-09-03.md mục 3 ghi đã sửa bằng `
+   fix: Chạy lại Playwright capture sau lần build cuối rồi mới mở tầng 2; ghi giờ chụp và hash của style.css vào REPORT để lần sau có thể đối chiếu.
+
+[MAJOR] artists.html S3 | Responsive: bố cục hàng dưới 60rem (mũi tên mồ côi)
+   ev: style.css:404-406 đổi grid thành `minmax(0,1fr) auto` và cho years/role/count `grid-column: 1 / -1` nhưng không đặt chỗ cho `.row__arrow`; auto-placement đẩy mũi tên xuống hàng grid thứ 5 (cột 1, justify-self end). artists-375.png: mỗi hàng cao ~222px (Đặng Vă
+   fix: Trong @media (max-width: 60rem) thêm `.row__arrow { grid-column: 2; grid-row: 1; align-self: start; }` để mũi tên đứng cạnh tên ở hàng 1, hoặc `display: none` ở màn hẹp. Cho hàng aria-disabled render 
+
+[MAJOR] artists.html S3 | Kích thước chạm 44px (PRODUCT.md Accessibility, DESIGN.md §5)
+   ev: Link `Về mục lục →` (artists.html:23): `.draft__link` style.css:132 chỉ có font-size 0.8rem, không min-height/padding; kế thừa `line-height: 1` từ `.draft .wrap` (style.css:120) và `display: inline-block` từ `.link` (:72) → hộp link cao ≈13px trong banner 40px
+   fix: `.draft__link { display:inline-flex; align-items:center; min-height:44px; }` (banner có thể giữ 40px thị giác bằng margin âm hoặc nâng --draft-h lên 44). `.bar__links a { padding-block: calc((44px - 0
+
+[MAJOR] artists.html S3 | Focus không bị che bởi header sticky (WCAG 2.2 2.4.11) / scroll-paddin
+   ev: `.site-top` sticky, z 300, cao 40+72+2 = 114px (style.css:102-108, tokens.css:91-92); html (style.css:16) không có `scroll-padding-top`. Shift+Tab ngược lên một hàng đang nằm trên viewport, hoặc nhảy tới `#main` (artists.html:46), trình duyệt cuộn phần tử sát 
+   fix: `html { scroll-padding-top: calc(var(--draft-h) + var(--bar-h) + var(--space-md)); }`; cân nhắc thêm skip link `<a class="skip" href="#main">Bỏ qua tới nội dung</a>` trước `.site-top` vì có 6-7 điểm f
+
+[MAJOR] artists.html S3 | Hierarchy: Luật Vàng Quỳ (ngoài lens S3 nhưng có bằng chứng pixel)
+   ev: artists.html:53 dùng `class="rows entry"`. `.entry { border-top: 2px solid var(--color-accent-2) }` ở style.css:202 bị `.rows { border-top: 1px solid var(--color-rule) }` ở style.css:272 đè (cùng specificity, khai báo sau). Quét toàn bộ pixel hai ảnh: không có
+   fix: Chuyển `.entry` xuống sau `.rows`/`.spec` hoặc tăng specificity: `.rows.entry, .spec.entry { border-top: var(--rule-gilt) solid var(--color-accent-2); }`. Thêm check vào scripts/check.mjs: mỗi trang đ
+
+[MAJOR] artists-detail.html S1 | Nhãn "Ảnh minh họa" ở mọi chỗ có ảnh; ảnh không được đọc như ảnh tác p
+   ev: artists-detail.html:63-74 thẻ `.work`: ảnh Pexels chỉ có alt="Ảnh minh họa cho tác phẩm Bến sông sớm" (dòng 65), không có `.plate__tag` hay `.plate__cap` hiển thị như home.html:58-59 và artworks-detail.html:53-54. Nguồn: src/templates/partials/blocks.mjs:56-67
+   fix: Trong src/templates/partials/blocks.mjs thẻ `.work`, thêm ngay dưới plate hoặc cuối `.work__label` một dòng hiển thị, ví dụ `<span class="chip chip--muted caps plate__tag">Ảnh minh họa</span>` (cùng k
+
+[MAJOR] artists-detail.html S1 | Placeholder không được giả làm nội dung thật: số liệu, ngày tháng bịa 
+   ev: artists-detail.html:49-51 in "Trần Hữu Khiêm", "1924–1998 · Họa sĩ" và :68-71 "SM-001 · 1986 · Sơn mài trên vóc · 80 × 120 cm" như dữ liệu thật. Repo tự khai đây là hư cấu (README.md:13, data/FIELDS.md:42 "tên trong demo là hư cấu", index.html:188) nhưng trang
+   fix: Trong artist-detail.mjs, sau `<p class="count caps">... tác phẩm trong bộ sưu tập</p>` thêm `<p class="verify">Tên và năm sinh mất là dữ liệu mẫu hư cấu của bản demo.</p>` (cùng giọng artwork-detail.m
+
+[MAJOR] artists-variant-grouped.html S2 | Pre-emit trục B Hierarchy + gate 9 (nhịp section) · DESIGN.md §3 kiểu 
+   ev: style.css:203 `.head { font-size: var(--text-lg) }` kế thừa h2 Archivo 125% / 700; style.css:286 `.row__name` Archivo 125% / 600 / text-lg. Đầu mục nhóm và tên người cùng cỡ 25px, cùng họ, cùng width, chỉ lệch 700 với 600. Crop artists-variant-grouped-1280.png
+   fix: Dùng `.head--inline` (style.css:204–213, đúng kiểu Label mà DESIGN.md §3 gọi là 'đầu mục nhỏ', margin xl 0 sm) cho h2 nhóm, như các trang stub đang dùng; hoặc giữ `.head` nhưng hạ xuống text-md và thê
+
+[MAJOR] artists-variant-grouped.html S2 | Gate 26 (thiếu trạng thái disabled) + DESIGN.md §5 'phần tử vô hiệu dù
+   ev: html:80 `<li class="row"><div class="row__inner" aria-disabled="true">` không có `row--reserved`. style.css không có selector `[aria-disabled]` nào cho `.row__inner` hay `.row__name` (chỉ `.link[aria-disabled]` dòng 81 và `.row--reserved .row__name { color: mu
+   fix: Build thêm lớp `row--reserved` vào li của người có `artist_status: review`, hoặc thêm vào style.css: `.row__inner[aria-disabled="true"] { cursor: not-allowed } .row__inner[aria-disabled="true"] .row__
+
+[MAJOR] artists-variant-grouped.html S2 | Hard rule 'verify before you say done' · ảnh chụp cũ hơn mã
+   ev: stat: assets/css/style.css 12:22:16, artists-variant-grouped.html 12:22:19; verify/screenshots/artists-variant-grouped-375.png 12:17:53, artists-variant-grouped-1280.png 12:18:35. Cả hai ảnh chụp trước lần sửa cuối khoảng 4 phút. Hệ quả cụ thể: crop 375 vùng y
+   fix: Chụp lại toàn bộ verify/screenshots sau lần sửa cuối, ghi mtime hoặc hash của style.css vào log ảnh, rồi mới dùng ảnh làm bằng chứng duyệt.
+
+[MAJOR] artists-khuyet-danh.html S1 | Ghi "Ảnh minh họa" ở mọi chỗ có ảnh (DESIGN.md §8 Do; PRODUCT.md Desig
+   ev: artists-khuyet-danh.html:63-85: hai plate chỉ có alt (":65" và ":76" `alt="Ảnh minh họa cho tác phẩm …"`), không có nhãn nhìn thấy nào; template tác phẩm thì có (artworks-pho-co-mua-dong.html:53 `figcaption.plate__cap` và :54 `span.plate__tag "Ảnh minh họa"`).
+   fix: Trong template artist-detail, thêm dưới mỗi `.work__plate` một `<span class="chip chip--muted caps plate__tag">Ảnh minh họa</span>` như template artwork, hoặc một dòng `.plate__cap` ngay dưới h2 "Tác 
+
+[MAJOR] artists-variant-grouped.html S3 | a11y / thuộc tính ARIA hợp lệ
+   ev: artists-variant-grouped.html:37 và :42 chứa `aria-current=&quot;page&quot;` (giá trị thuộc tính không có ngoặc, hai dấu ngoặc bị escape nằm bên trong giá trị). Trình duyệt giải mã thành aria-current='"page"'; token không hợp lệ nên ARIA 1.2 coi là `true`: NVDA
+   fix: Trong header.mjs:11 bọc bằng raw(): `${page.nav === n.key ? raw(' aria-current="page"') : ''}` rồi chạy lại build; thêm vào scripts/check.mjs một cổng grep `=&quot;` trong file HTML.
+
+[MAJOR] artists-variant-grouped.html S3 | a11y / kích thước vùng chạm 44px (PRODUCT.md dòng 38)
+   ev: Link "Về mục lục →" (.draft__link): font 0.8rem (style.css:132) kế thừa line-height:1 từ .draft .wrap (style.css:120) nên hộp click chỉ ~13px; ảnh 1280 x1140-1240 chỉ có mực ở y=14..26; cả banner cũng chỉ 40px (--draft-h) nên không thể đạt 44. Link nav desktop
+   fix: .draft__link và .bar__links a: display:inline-flex; align-items:center; min-height:44px (nâng --draft-h lên 44px hoặc ghi rõ ngoại lệ 24px theo WCAG 2.2 2.5.8). .ask .link: min-height 44px, inline-fle
+
+[MAJOR] artists-variant-grouped.html S3 | bằng chứng kiểm chứng khớp với bản build
+   ev: mtime: ảnh 375 12:17:53, ảnh 1280 12:18:35 < style.css 12:22:16 < HTML 12:22:19 < src/templates/partials/header.mjs 12:26:15. Ảnh 375 vẫn cho thấy "BẢN NHÁP" xuống hai dòng (pixel mực ở x<40 tại hai dải y=6..16 và y=20..30; cả home-menu-375.png cũng vậy) dù RE
+   fix: Chạy lại `node scripts/build.mjs`, chụp lại toàn bộ ảnh sau khi build, và thêm assert trong bước chụp: pixelWidth của ảnh == viewport. Ghi lại tầng 1 của REPORT sau khi chụp lại.
+
+[MAJOR] artists-variant-grouped.html S3 | responsive / hàng danh mục ở 375
+   ev: Ảnh 375: hairline ở y=419 và y=643 bao hàng "Trần Hữu Khiêm": 224px cho tên + 3 trường ngắn; mọi hàng có link đều 223-224px (y 721→944, 1246→1470, 2075→2299, 2377→2600). Mũi tên → nằm một mình ở dòng thứ 5 (x≈330, y≈615) vì style.css:404-406 chuyển grid sang 2
+   fix: Trong @media (max-width: 60rem): `.row__arrow { grid-column: 2; grid-row: 1; }` (hoặc grid-auto-flow: dense) và `.row__inner { row-gap: var(--space-2xs); }`; cân nhắc gộp năm · vai trò · số tác phẩm v
+
+[MAJOR] artists-variant-grouped.html S3 | hierarchy / đầu mục nhóm so với tên người
+   ev: h2.head = 1.5625rem/700 (style.css:203, kế thừa h2 ở :32-41) và .row__name = 1.5625rem/600 cùng Archivo 125% (style.css:286). Ảnh 1280: "Sinh thập niên 1920" (y≈305-340) và "Trần Hữu Khiêm" (y≈375-410) cùng cỡ, cùng họ, cùng nằm giữa hai hairline; ảnh 375 y≈38
+   fix: Dùng kiểu nhãn đã có cho đầu mục nhóm: class `head--inline` (Condensed viết hoa 0.8rem, style.css:204-213) kèm số đếm "2 người", hoặc giữ h2 nhưng tăng margin-top lên var(--space-2xl) và bỏ hairline n
+
+[MAJOR] artists-detail.html S2 | 26 · trạng thái phần tử tương tác (và DESIGN.md §5 C3, dòng cuối §5)
+   ev: Link người sáng tác `.work__creator a` (artists-detail.html:70, sinh từ src/templates/partials/blocks.mjs:41) không có hover, không có active, không gạch dưới: style.css:267 chỉ định nghĩa `.work__creator` (màu ink-2, 600), không có rule nào cho `.work__creato
+   fix: Thêm `.work__creator a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; transition: text-decoration-thickness var(--dur-short) var(--ease-out) } .work__creat
+

@@ -16,7 +16,7 @@ export function render({ page, data }) {
     const list = mediums.filter((m) => m.object_class === g.key);
     if (!list.length) return '';
     return html`<section aria-labelledby="g-${g.key}">
-      <h2 class="head" id="g-${g.key}">${g.label}</h2>
+      <h2 class="head--inline" id="g-${g.key}">${g.label}</h2>
       <ul class="rows">${join(list.map((m) => mediumRow(m, data)))}</ul>
     </section>`;
   }));

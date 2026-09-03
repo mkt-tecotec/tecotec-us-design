@@ -14,7 +14,7 @@ export function render({ page, data, artist }) {
     ${pending({ tag: 'Tiểu sử', body: 'Không có tiểu sử. Các tác phẩm dưới đây chưa xác định được tác giả; khi có thông tin nguồn gốc, tác phẩm sẽ được chuyển sang trang người sáng tác tương ứng.', blocker: 'Chờ nguồn gốc (M4, M10).' })}
   </div>
   <section class="section" aria-labelledby="h-works">
-    ${head('Tác phẩm')}
+    ${head('Tác phẩm', 2, 'h-works')}
     ${worksGrid(works, data, 3)}
   </section>
 </div>`;
@@ -31,7 +31,7 @@ export function render({ page, data, artist }) {
     ${pending({ tag: 'Tiểu sử', body: 'Tiểu sử 100 đến 200 từ: nơi học, giai đoạn sáng tác, chất liệu quen dùng. Không tự viết trong bản demo.', blocker: 'Chờ người có chuyên môn mỹ thuật (M7).' })}
   </div>
   <section class="section" aria-labelledby="h-works">
-    ${head('Tác phẩm')}
+    ${head('Tác phẩm', 2, 'h-works')}
     ${works.length ? worksGrid(works, data, 3) : html`<p class="muted">Chưa có tác phẩm nào được nhập.</p>`}
   </section>
 </div>`;

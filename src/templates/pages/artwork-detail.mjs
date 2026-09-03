@@ -42,7 +42,7 @@ export function render({ page, data, work }) {
   </section>
 
   ${details.length ? html`<section class="section" aria-labelledby="h-details">
-    ${head('Chi tiết')}
+    ${head('Chi tiết', 2, 'h-details')}
     <div class="strip">
       ${join(details.map((d) => plate({ data, slot: d.slot, ar: '4 / 3', caption: d.caption, sizes: '(max-width: 60rem) 50vw, 25vw', tag: false })))}
     </div>
@@ -50,12 +50,12 @@ export function render({ page, data, work }) {
   </section>` : ''}
 
   <section class="section" aria-labelledby="h-note">
-    ${head('Ghi chú')}
+    ${head('Ghi chú', 2, 'h-note')}
     ${pending({ tag: 'Chú giải tác phẩm', body: 'Chú giải 80 đến 150 từ về đề tài, kỹ thuật và bối cảnh sáng tác. Không tự viết trong bản demo.', blocker: 'Chờ người có chuyên môn mỹ thuật (M7).' })}
   </section>
 
   ${related.length ? html`<section class="section" aria-labelledby="h-related">
-    ${head(creator ? 'Cùng người sáng tác' : 'Cùng chưa xác định tác giả')}
+    ${head(creator ? 'Cùng người sáng tác' : 'Cùng chưa xác định tác giả', 2, 'h-related')}
     ${worksGrid(related, data, 3)}
     <p class="stack"><a class="link" href="${artistHref(creator)}">${creator ? `Tất cả tác phẩm của ${creator.name} →` : 'Tất cả tác phẩm khuyết danh →'}</a></p>
   </section>` : ''}

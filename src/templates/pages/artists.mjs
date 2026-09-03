@@ -34,12 +34,12 @@ export function render({ page, data }) {
     <p class="dek">Danh sách chia nhóm theo thập niên sinh. Tên nhóm lấy từ dữ liệu, không đặt tên nhóm nếu chưa có quyết định.</p>
   </header>
   <div class="section entry stack">
-    ${join(keys.map((k) => html`<section aria-labelledby="g-${k.replace(/\W+/g, '-')}">
-      <h2 class="head" id="g-${k.replace(/\W+/g, '-')}">${k}</h2>
+    ${join(keys.map((k, i) => html`<section aria-labelledby="g-${i}">
+      <h2 class="head--inline" id="g-${i}">${k}</h2>
       <ul class="rows">${join(groups.get(k).map((a) => artistRow(a, data)))}</ul>
     </section>`))}
     <section aria-labelledby="g-anon">
-      <h2 class="head" id="g-anon">Chưa xác định tác giả</h2>
+      <h2 class="head--inline" id="g-anon">Chưa xác định tác giả</h2>
       <ul class="rows">${anonymousRow(data)}</ul>
     </section>
   </div>

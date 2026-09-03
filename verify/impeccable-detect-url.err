@@ -1,1 +1,10 @@
-(eval):1: command not found: timeout
+file:///Users/tuyenpv16/.claude/plugins/cache/impeccable/impeccable/3.1.1/skills/impeccable/scripts/detector/engines/browser/detect-url.mjs:223
+    throw new Error('puppeteer is required for URL scanning. Install: npm install puppeteer');
+          ^
+
+Error: puppeteer is required for URL scanning. Install: npm install puppeteer
+    at createBrowserDetector (file:///Users/tuyenpv16/.claude/plugins/cache/impeccable/impeccable/3.1.1/skills/impeccable/scripts/detector/engines/browser/detect-url.mjs:223:11)
+    at async detectCli (file:///Users/tuyenpv16/.claude/plugins/cache/impeccable/impeccable/3.1.1/skills/impeccable/scripts/detector/cli/main.mjs:120:50)
+    at async file:///Users/tuyenpv16/.claude/plugins/cache/impeccable/impeccable/3.1.1/skills/impeccable/scripts/detect.mjs:21:1
+
+Node.js v24.11.1

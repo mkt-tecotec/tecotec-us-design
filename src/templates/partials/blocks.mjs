@@ -22,7 +22,7 @@ export function ask({ question, back, codes }) {
 </aside>`;
 }
 
-export const head = (text, level = 2) => raw(`<h${level} class="head">${html`${text}`}</h${level}>`);
+export const head = (text, level = 2, id = null) => raw(`<h${level} class="head"${id ? ` id="${id}"` : ''}>${html`${text}`}</h${level}>`);
 export const headInline = (text) => html`<h2 class="head--inline">${text}</h2>`;
 
 // Ảnh trên mat, giữ đúng tỷ lệ. ar = "w / h".
@@ -48,27 +48,28 @@ export function workMeta(w, data) {
 }
 
 // Thẻ tác phẩm: plate + nhãn.
-export function workCard(w, data) {
+export function workCard(w, data, level = 3) {
   const set = data.setOf(w);
   const ar = `${w.tw_dim_w} / ${w.tw_dim_h}`;
   const main = w.images[0].slot;
+  const h = `h${level}`;
   return html`<article class="work">
   <a class="work__plate" href="${artworkHref(w)}" aria-label="${w.title}, xem trang tác phẩm">
     <div class="plate__box" style="--ar: ${ar}">${img(data.images, data.slots, main, { sizes: '(max-width: 40rem) 50vw, (max-width: 60rem) 33vw, 25vw' })}</div>
   </a>
   <div class="work__label">
     <p class="work__no num">${w.tw_inventory_no}</p>
-    <h3 class="work__title"><a href="${artworkHref(w)}">${w.title}</a></h3>
+    ${raw(`<${h} class="work__title">`)}<a href="${artworkHref(w)}">${w.title}</a>${raw(`</${h}>`)}
     <p class="work__creator">${creatorLine(w, data)}</p>
     <p class="work__meta">${workMeta(w, data)}</p>
-    ${set ? html`<p class="work__set"><span class="chip chip--muted caps">Bộ ${set.length} tấm</span></p>` : ''}
+    <p class="work__set">${set ? html`<span class="chip chip--muted caps">Bộ ${set.length} tấm</span> ` : ''}<span class="work__tag caps">Ảnh minh họa</span></p>
   </div>
 </article>`;
 }
 
-export function worksGrid(list, data, cols = 4) {
+export function worksGrid(list, data, cols = 4, level = 3) {
   const cls = cols === 3 ? 'works works--3' : cols === 2 ? 'works works--2' : 'works';
-  return html`<div class="${cls}">${join(list.map((w) => workCard(w, data)))}</div>`;
+  return html`<div class="${cls}">${join(list.map((w) => workCard(w, data, level)))}</div>`;
 }
 
 // Nhãn tác phẩm (tombstone) dạng dl.
@@ -113,14 +114,19 @@ export function anonymousRow(data) {
 
 export function mediumRow(m, data) {
   const n = (data.worksByMedium[m.slug] || []).length;
-  const status = m.public ? html`<span class="row__status caps">${n} tác phẩm</span>` : html`<span class="row__status chip chip--dashed caps">Đang chuẩn bị</span>`;
+  const status = m.public
+    ? html`<span class="row__status caps">${n} tác phẩm</span>`
+    : (m.phase == null
+      ? html`<span class="row__status chip chip--dashed caps">Giữ chỗ, chờ M5</span>`
+      : html`<span class="row__status chip chip--dashed caps">Đang chuẩn bị</span>`);
   const thumb = m.public
     ? html`<div class="row__thumb plate"><div class="plate__box" style="--ar: 4 / 5">${img(data.images, data.slots, m.image, { w: 640, sizes: '96px' })}</div></div>`
     : html`<div class="row__thumb row__thumb--empty" aria-hidden="true"></div>`;
   const inner = html`<span class="row__name">${m.name}</span>
     <span class="row__desc">${m.description_short}</span>
     ${status}
-    ${thumb}`;
+    ${thumb}
+    <span class="row__arrow" aria-hidden="true">${m.public ? '→' : ''}</span>`;
   if (m.public) return html`<li class="row"><a class="row__inner row__inner--medium" href="collection-${m.slug}.html">${inner}</a></li>`;
   return html`<li class="row row--reserved"><div class="row__inner row__inner--medium" aria-disabled="true">${inner}</div></li>`;
 }

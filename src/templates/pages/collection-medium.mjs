@@ -13,7 +13,7 @@ export function render({ page, data }) {
     </div>
   </header>
   <section class="section" aria-label="Tác phẩm ${m.name}">
-    ${worksGrid(works, data, 4)}
+    ${worksGrid(works, data, 4, 2)}
   </section>
 </div>`;
 }
