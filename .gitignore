@@ -13,3 +13,4 @@ verify/lighthouse/
 verify/*.json
 verify/*.err
 verify/server.log
+verify/server.log
