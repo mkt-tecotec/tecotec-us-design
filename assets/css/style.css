@@ -51,7 +51,7 @@ strong { font-weight: var(--wght-strong); }
 
 /* nhãn condensed viết hoa, số hiệu tabular */
 .caps {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-stretch: var(--wdth-label);
   font-weight: var(--wght-label);
   font-size: var(--text-sm);
@@ -354,18 +354,186 @@ a.row__inner:active { background: var(--color-paper-3); }
 .ask__q { font-size: var(--text-md); margin-top: var(--space-sm); }
 .ask .link { margin-top: var(--space-sm); }
 
-/* ---------- footer Ft4: colophon trên nâu cánh gián ---------- */
-.colophon { background: var(--color-surface-deep); color: var(--color-paper); margin-top: var(--space-3xl); }
-.colophon .wrap { padding-block: var(--space-2xl) var(--space-xl); max-width: calc(72ch + 2 * var(--page-gutter)); margin-inline: 0; }
-.colophon p { font-size: var(--text-sm); line-height: 1.7; }
-.colophon p + p { margin-top: var(--space-md); }
-.colophon .brand__wordmark { color: var(--color-paper); font-size: var(--text-base); }
-.colophon a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; white-space: nowrap; transition: text-decoration-thickness var(--dur-short) var(--ease-out); }
-.colophon a:hover { text-decoration-thickness: 2px; }
-.colophon a:focus-visible { outline-color: var(--color-focus-on-deep); }
-.colophon a:active { text-decoration-thickness: 2px; color: var(--color-paper-3); }
-.colophon__item { white-space: nowrap; display: inline-block; }
-.colophon__links a { display: inline-block; padding-block: var(--space-sm); }
+/* ---------- footer Ft4: colophon gallery style ---------- */
+.colophon {
+  background: #0b0a09;
+  color: #e5e0d8;
+  margin-top: var(--space-3xl);
+  padding-block: var(--space-3xl) var(--space-xl);
+  border-top: var(--rule-hair) solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  max-width: none !important;
+}
+.colophon__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2xl);
+  max-width: 1300px !important;
+  margin-inline: auto !important;
+  width: 100%;
+  padding-inline: var(--page-gutter);
+}
+.colophon__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-xs);
+}
+.colophon__logo-link {
+  display: inline-block;
+}
+.colophon__logo {
+  height: 80px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  margin-bottom: var(--space-xs);
+  transition: opacity var(--dur-short) var(--ease-out);
+}
+.colophon__logo-link:hover .colophon__logo {
+  opacity: 0.8;
+}
+.colophon__brand-name {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: #f7f3ec;
+  text-transform: uppercase;
+  margin: 0;
+}
+.colophon__brand-sub {
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  color: #9e9386;
+  text-transform: uppercase;
+}
+.colophon__main-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: var(--space-3xl);
+  width: 100%;
+  margin-block: var(--space-md);
+}
+.colophon__sec-title {
+  font-size: 0.875rem;
+  letter-spacing: 0.18em;
+  color: var(--color-ink-2);
+  text-transform: uppercase;
+  margin-bottom: var(--space-lg);
+  font-weight: 600;
+}
+.colophon__sub-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-xl);
+}
+.colophon__loc-name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #f7f3ec;
+  margin: 0 0 var(--space-xs) 0;
+}
+.colophon__text {
+  font-size: 0.875rem;
+  color: #b3a99c;
+  line-height: 1.7;
+  margin: 0;
+}
+.colophon__sec--contact {
+  text-align: left;
+}
+.colophon__contact-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+.colophon__socials {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-xs);
+}
+.colophon__social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  color: #f7f3ec;
+  transition: all var(--dur-short) var(--ease-out);
+  text-decoration: none;
+}
+.colophon__social-icon:hover {
+  border-color: #f7f3ec;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+.colophon__zalo-text {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.colophon__nav-bar {
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-block: var(--space-sm);
+  margin-block: var(--space-xs);
+}
+.colophon__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-xs) var(--space-xl);
+}
+.colophon__links a {
+  color: #d1c8bd;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color var(--dur-short) var(--ease-out);
+  padding-block: var(--space-2xs);
+}
+.colophon__links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+.colophon__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: #857b6f;
+  text-transform: uppercase;
+}
+@media (max-width: 54rem) {
+  .colophon__main-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+}
+@media (max-width: 36rem) {
+  .colophon__sub-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  .colophon__links {
+    gap: var(--space-xs) var(--space-md);
+  }
+  .colophon__bottom {
+    flex-direction: column;
+    gap: var(--space-2xs);
+    text-align: center;
+  }
+}
 
 /* ---------- hub ---------- */
 .hub-note { background: var(--color-ink); color: var(--color-paper); }
@@ -439,4 +607,456 @@ a.tree__row:active { background: var(--color-paper-3); }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 0ms !important; animation: none !important; scroll-behavior: auto !important; }
+}
+
+/* ---------- Hiệu ứng dải vết loang nghệ thuật (Sơn dầu / Sơn mài) ---------- */
+.paint-wash-bg {
+  position: relative;
+  overflow: hidden;
+}
+.paint-wash-bg::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 55% 40% at 15% 25%, rgba(139, 30, 30, 0.22) 0%, rgba(90, 58, 41, 0.08) 50%, transparent 80%),
+    radial-gradient(ellipse 65% 50% at 85% 20%, rgba(45, 106, 79, 0.28) 0%, rgba(74, 130, 88, 0.12) 50%, transparent 80%),
+    radial-gradient(ellipse 50% 45% at 18% 75%, rgba(58, 125, 68, 0.24) 0%, rgba(184, 145, 47, 0.08) 50%, transparent 80%),
+    radial-gradient(ellipse 70% 50% at 80% 75%, rgba(184, 145, 47, 0.25) 0%, rgba(45, 106, 79, 0.14) 50%, transparent 80%),
+    radial-gradient(ellipse 60% 60% at 50% 50%, rgba(90, 58, 41, 0.14) 0%, transparent 75%);
+  filter: blur(28px);
+}
+.paint-wash-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.1  0 0 0 0 0.08  0 0 0 0 0.06  0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.65;
+  mix-blend-mode: multiply;
+}
+.paint-wash-accents {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.paint-stroke {
+  position: absolute;
+  pointer-events: none;
+  filter: blur(6px);
+  mix-blend-mode: multiply;
+  opacity: 1;
+}
+.paint-stroke--1 {
+  top: -6%;
+  left: -8%;
+  width: 55vw;
+  max-width: 700px;
+  transform: rotate(-6deg);
+}
+.paint-stroke--2 {
+  top: 5%;
+  right: -10%;
+  width: 48vw;
+  max-width: 620px;
+  transform: rotate(14deg);
+}
+.paint-stroke--3 {
+  bottom: -8%;
+  left: 5%;
+  width: 45vw;
+  max-width: 580px;
+  transform: rotate(-12deg);
+}
+.paint-wash-bg > .wrap,
+.paint-wash-bg > .wrap--full,
+.paint-wash-bg > .hero-carousel,
+.paint-wash-dark > .wrap,
+.paint-wash-dark > .wrap--full {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Hiệu ứng dải vết loang nghệ thuật cho section tối ---------- */
+.paint-wash-dark {
+  position: relative;
+  overflow: hidden;
+}
+.paint-wash-dark::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 60% 45% at 15% 25%, rgba(226, 192, 104, 0.16) 0%, rgba(139, 30, 30, 0.08) 50%, transparent 80%),
+    radial-gradient(ellipse 65% 50% at 85% 75%, rgba(45, 106, 79, 0.20) 0%, rgba(90, 58, 41, 0.10) 50%, transparent 80%),
+    radial-gradient(ellipse 50% 50% at 50% 40%, rgba(184, 145, 47, 0.12) 0%, transparent 75%);
+  filter: blur(40px);
+}
+.paint-wash-dark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.45;
+  mix-blend-mode: overlay;
+}
+
+/* ==========================================================================
+   Artist Roster Carousel (Editorial Portrait Cards)
+   ========================================================================== */
+.artist-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+  border-bottom: var(--rule-heavy) solid var(--color-ink);
+  padding-bottom: var(--space-md);
+}
+
+.artist-section-header__tag {
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  display: block;
+  margin-bottom: var(--space-3xs);
+}
+
+.artist-section-header__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.2vw, 2.75rem);
+  color: var(--color-ink);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.artist-section-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.artist-section-header__link {
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  text-decoration: none;
+  transition: color var(--dur-short) var(--ease-out);
+}
+
+.artist-section-header__link:hover {
+  color: var(--color-ink);
+}
+
+/* Carousel Control Counter Badge */
+.artist-carousel-counter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  background: var(--color-paper-2);
+  padding: var(--space-3xs) var(--space-sm);
+  border-radius: var(--space-2xl);
+  border: 1px solid var(--color-rule-2);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-muted);
+  letter-spacing: 0.05em;
+}
+
+/* Carousel Track & Outer Side Nav Buttons (Outside Content Width) */
+.artist-carousel-wrapper {
+  position: relative;
+  margin-bottom: var(--space-lg);
+  width: 100%;
+}
+
+.artist-carousel-nav-btn {
+  position: absolute;
+  top: calc(50% - 22px);
+  z-index: var(--z-raised);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--color-rule-2);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px var(--color-paper-3);
+  transition: transform var(--dur-short) var(--ease-out), background-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out);
+}
+
+.artist-carousel-nav-btn--prev {
+  left: calc(var(--space-2xl) * -1);
+}
+
+.artist-carousel-nav-btn--next {
+  right: calc(var(--space-2xl) * -1);
+}
+
+.artist-carousel-nav-btn:hover {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  border-color: var(--color-ink);
+  transform: scale(1.08);
+}
+
+.artist-carousel-nav-btn:active {
+  transform: scale(0.96);
+}
+
+@media (max-width: 1440px) {
+  .artist-carousel-nav-btn--prev {
+    left: calc(var(--space-lg) * -1);
+  }
+  .artist-carousel-nav-btn--next {
+    right: calc(var(--space-lg) * -1);
+  }
+}
+
+@media (max-width: 1200px) {
+  .artist-carousel-nav-btn--prev {
+    left: calc(var(--space-xs) * -1);
+  }
+  .artist-carousel-nav-btn--next {
+    right: calc(var(--space-xs) * -1);
+  }
+}
+
+@media (max-width: 768px) {
+  .artist-carousel-nav-btn--prev {
+    left: 0;
+  }
+  .artist-carousel-nav-btn--next {
+    right: 0;
+  }
+}
+
+.artist-carousel {
+  display: flex;
+  gap: var(--space-lg);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: var(--space-md);
+  width: 100%;
+  scrollbar-width: none;
+}
+
+.artist-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Artist Card */
+.artist-card {
+  flex: 0 0 310px;
+  scroll-snap-align: start;
+  min-width: 0;
+}
+
+@media (min-width: 640px) {
+  .artist-card {
+    flex: 0 0 330px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .artist-card {
+    flex: 0 0 350px;
+  }
+}
+
+.artist-card__inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-rule-2);
+  text-decoration: none;
+  color: var(--color-ink);
+  transition: all var(--dur-retract) var(--ease-out);
+  overflow: hidden;
+  position: relative;
+}
+
+.artist-card__inner:hover {
+  border-color: var(--color-accent);
+  background: var(--color-paper);
+}
+
+/* Portrait Frame */
+.artist-card__portrait-frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  overflow: hidden;
+  background: #110e0c;
+}
+
+.artist-card__portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: contrast(1.03) brightness(0.96);
+  transition: transform 0.5s linear, filter 0.5s linear;
+}
+
+.artist-card__inner:hover .artist-card__portrait {
+  transform: scale(1.05);
+  filter: contrast(1.06) brightness(1.01);
+}
+
+.artist-card__code {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(26, 21, 18, 0.82);
+  backdrop-filter: blur(4px);
+  color: var(--color-paper);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 4px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.artist-card__count {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(139, 30, 30, 0.9);
+  backdrop-filter: blur(4px);
+  color: var(--color-paper);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+}
+
+/* Card Content Body */
+.artist-card__content {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.artist-card__meta-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2xs);
+}
+
+.artist-card__years {
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+.artist-card__badge {
+  font-size: 0.7rem;
+  color: var(--color-ink-2);
+  background: var(--color-paper-3);
+  padding: 2px 6px;
+  letter-spacing: 0.02em;
+}
+
+.artist-card__name {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-ink);
+  margin: 0 0 var(--space-3xs) 0;
+  line-height: 1.15;
+  transition: color var(--dur-short) var(--ease-out);
+}
+
+.artist-card__inner:hover .artist-card__name {
+  color: var(--color-accent);
+}
+
+.artist-card__specialty {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-accent-2);
+  margin-bottom: var(--space-xs);
+  letter-spacing: 0.02em;
+}
+
+.artist-card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  line-height: 1.5;
+  margin-bottom: var(--space-md);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.artist-card__footer {
+  margin-top: auto;
+  padding-top: var(--space-xs);
+  border-top: 1px solid var(--color-rule-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.artist-card__cta {
+  letter-spacing: 0.08em;
+  transition: color var(--dur-short) var(--ease-out);
+}
+
+.artist-card__inner:hover .artist-card__cta {
+  color: var(--color-accent);
+}
+
+.artist-card__arrow {
+  transition: transform var(--dur-short) var(--ease-out);
+}
+
+.artist-card__inner:hover .artist-card__arrow {
+  transform: translateX(4px);
+  color: var(--color-accent);
+}
+
+/* Progress Bar */
+.artist-carousel-progress {
+  height: 3px;
+  background: var(--color-rule-2);
+  width: 100%;
+  margin-top: var(--space-xs);
+  position: relative;
+  overflow: hidden;
+}
+
+.artist-carousel-progress__bar {
+  height: 100%;
+  background: var(--color-accent);
+  width: 12.5%;
+  transition: transform 0.2s ease-out;
 }

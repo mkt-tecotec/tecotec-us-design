@@ -30,7 +30,6 @@ export function plate({ data, slot, ar, alt, caption, priority = false, sizes })
   const style = ar ? raw(` style="--ar: ${ar}"`) : '';
   return html`<figure class="plate">
   <div class="plate__box"${style}>${img(data.images, data.slots, slot, { alt, priority, sizes })}</div>
-  ${caption ? html`<figcaption class="plate__cap">${caption}</figcaption>` : ''}
 </figure>`;
 }
 
