@@ -19,7 +19,7 @@ export function header(page) {
 <header class="bar">
   <div class="wrap">
     <a class="brand" href="home.html">
-      <img class="brand__logo" src="assets/img/mark-TECOTEC-Group.svg" alt="TECOTEC Group" width="44" height="44">
+      <img class="brand__logo" src="./assets/img/mark-TECOTEC-Group.svg" alt="TECOTEC Group" width="44" height="44">
       <span class="brand__divider" aria-hidden="true"></span>
       <span class="brand__text">
         <span class="brand__wordmark">tecotec.us</span>

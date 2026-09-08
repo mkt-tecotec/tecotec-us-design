@@ -17,7 +17,7 @@ export function footer() {
   <div class="colophon__inner wrap">
     <div class="colophon__brand">
       <a href="home.html" class="colophon__logo-link">
-        <img class="colophon__logo" src="assets/img/mark-TECOTEC-Group.svg" alt="TECOTEC Group" width="80" height="80">
+        <img class="colophon__logo" src="./assets/img/mark-TECOTEC-Group.svg" alt="TECOTEC Group" width="80" height="80">
       </a>
       <h2 class="colophon__brand-name">TECOTEC NEW YORK LLC</h2>
       <div class="colophon__brand-sub caps">THÀNH VIÊN CỦA TECOTEC GROUP</div>
