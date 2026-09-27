@@ -618,6 +618,7 @@ strong { font-weight: var(--wght-strong); }
 .page { }
 .section { padding-block: var(--space-2xl); }
 .section + .section { border-top: var(--rule-hair) solid var(--color-rule-2); }
+.mt-8 { margin-top: var(--space-8); }
 .entry { }
 .head { font-size: var(--text-lg); margin-bottom: var(--space-lg); }
 .head--inline {
@@ -790,6 +791,11 @@ a.row__inner:active { background: var(--color-paper-3); }
 .spec dd a:hover { text-decoration-thickness: 2px; }
 .spec dd a:active { color: var(--color-ink-2); }
 /* kẻ mạ phải thắng hairline của .rows và .spec trong cascade (Luật Vàng Quỳ) */
+
+/* bảng hồ sơ người sáng tác */
+.field { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: var(--space-md); padding-block: var(--space-sm); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.field dt { color: var(--color-muted); }
+.field dd { min-width: 0; }
 .label__title { font-size: var(--text-xl); }
 .tombstone { position: sticky; top: calc(var(--bar-h) + var(--space-md)); z-index: var(--z-sticky); }
 .spread--photo { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }

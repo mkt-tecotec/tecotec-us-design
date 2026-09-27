@@ -70,6 +70,10 @@
   --space-2xl: 4rem;
   --space-3xl: 6rem;
   --space-4xl: 9rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
   --page-max:    80rem;
   --page-gutter: clamp(1rem, 4vw, 3rem);
   --measure:     60ch;

@@ -5,74 +5,126 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <title>Đình làng · SM-010 · tecotec.us</title>
-<meta name="description" content="Hồ sơ tác phẩm Đình làng, số hiệu SM-010, khoảng 1970, Sơn mài trên vóc.">
+<meta name="description" content="Hồ sơ tác phẩm Đình làng, số hiệu SM-010, Nguyễn Thế Bảo, 1998, Sơn mài trên vóc.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Inter:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/css/tokens.css">
 <link rel="stylesheet" href="./assets/css/style.css">
-<style>
-.detail-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-3); margin-top: var(--space-6); }
-.detail-strip img { aspect-ratio: 1; object-fit: cover; border: 1px solid var(--manila-edge); }
-@media (max-width: 600px) { .detail-strip { grid-template-columns: repeat(2, 1fr); } }
-</style>
 </head>
 <body>
+
 <div class="site-top">
-<header class="bar">
-  <div class="wrap">
-    <a class="brand" href="index.html">
-      <img class="brand__logo" src="./assets/img/mark-TECOTEC-Group.svg" alt="TECOTEC Group" width="44" height="44">
-      <span class="brand__divider" aria-hidden="true"></span>
-      <span class="brand__text"><span class="brand__wordmark">tecotec.us</span><span class="brand__member">thành viên của TECOTEC Group</span></span>
-    </a>
-    <nav class="bar__nav" aria-label="Điều hướng chính">
-      <ul class="bar__links caps"><li><a href="about.html">Giới thiệu</a></li><li><a href="collection.html">Bộ sưu tập</a></li><li><a href="artists.html">Người sáng tác</a></li><li><a href="contact.html">Liên hệ</a></li></ul>
-      <button class="bar__toggle caps" type="button" aria-expanded="false" aria-controls="menu-panel">Mục lục</button>
-      <div class="bar__panel" id="menu-panel"><ul><li><a href="about.html">Giới thiệu</a></li><li><a href="collection.html">Bộ sưu tập</a></li><li><a href="artists.html">Người sáng tác</a></li><li><a href="contact.html">Liên hệ</a></li></ul></div>
-    </nav>
-  </div>
-</header>
+  <header class="bar">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <img class="brand__logo" src="./assets/img/mark-TECOTEC-Group.svg" alt="TECOTEC Group" width="44" height="44">
+        <span class="brand__divider" aria-hidden="true"></span>
+        <span class="brand__text">
+          <span class="brand__wordmark">tecotec.us</span>
+          <span class="brand__member">thành viên của TECOTEC Group</span>
+        </span>
+      </a>
+      <nav class="bar__nav" aria-label="Điều hướng chính">
+        <ul class="bar__links caps">
+          <li><a href="about.html">Giới thiệu</a></li>
+          <li><a href="collection.html" class="is-active">Bộ sưu tập</a></li>
+          <li><a href="son-mai.html">Sơn mài</a></li>
+          <li><a href="artists.html">Người sáng tác</a></li>
+          <li><a href="art-notes.html">Ghi chép nghệ thuật</a></li>
+          <li><a href="contact.html">Liên hệ</a></li>
+        </ul>
+        <button class="bar__toggle caps" type="button" aria-expanded="false" aria-controls="mobile-nav">Mục lục</button>
+      </nav>
+    </div>
+    <div class="bar__panel" id="mobile-nav">
+      <ul class="caps">
+        <li><a href="about.html">Giới thiệu</a></li>
+        <li><a href="collection.html" class="is-active">Bộ sưu tập</a></li>
+        <li><a href="son-mai.html">Sơn mài</a></li>
+        <li><a href="artists.html">Người sáng tác</a></li>
+        <li><a href="art-notes.html">Ghi chép nghệ thuật</a></li>
+        <li><a href="contact.html">Liên hệ</a></li>
+      </ul>
+    </div>
+  </header>
 </div>
 
-<nav class="dossier-tabs" aria-label="Danh mục hồ sơ">
-  <div class="wrap">
-    <a href="index.html">01 · TỔNG QUAN</a>
-    <a href="collection.html" aria-current="page">02 · BỘ SƯU TẬP</a>
-    <a href="son-mai.html">03 · SƠN MÀI</a>
-    <a href="artists.html">04 · NGƯỜI SÁNG TÁC</a>
-    <a href="art-notes.html">05 · GHI CHÉP</a>
-    <a href="about.html">06 · GIỚI THIỆU</a>
-  </div>
-</nav>
+<main class="page">
+  <section class="hero--100vh-paper">
+    <div class="wrap spread spread--photo">
+      <div class="spread__side">
+        <figure class="plate">
 
-<main>
-  <section class="section" style="padding-bottom: var(--space-4);">
-    <div class="wrap">
-      <a class="link-arrow" href="collection.html">← Về bộ sưu tập</a>
+          <div class="plate__box" style="--ar: 4/3">
+            <img src="https://images.pexels.com/photos/34669353/pexels-photo-34669353.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Đình làng" data-placeholder="pexels-34669353">
+          </div>
+        </figure>
+      </div>
+
+      <div class="spread__text">
+        <div class="caps num muted" style="margin-bottom: var(--space-2xs);"><a href="collection.html">Bộ sưu tập</a> &sol; <a href="son-mai.html">Sơn mài</a> &sol; SM-010</div>
+        <h1 class="title title--2xl" style="font-size: var(--text-display); margin-bottom: var(--space-md);">Đình làng</h1>
+        <div class="tombstone">
+          <dl class="spec entry" style="border: var(--rule-hair) solid var(--color-rule); padding: var(--space-md); background: var(--color-paper-2);">
+
+            <div>
+              <dt class="caps">Số hiệu</dt>
+              <dd class="num">SM-010</dd>
+            </div>
+            <div>
+              <dt class="caps">Nhan đề</dt>
+              <dd class="label__title"><strong>Đình làng</strong></dd>
+            </div>
+            <div>
+              <dt class="caps">Người sáng tác</dt>
+              <dd><a href="nguoi-sang-tac-nguyen-the-bao.html">Nguyễn Thế Bảo</a></dd>
+            </div>
+            <div>
+              <dt class="caps">Năm sáng tác</dt>
+              <dd class="num">1998</dd>
+            </div>
+            <div>
+              <dt class="caps">Chất liệu</dt>
+              <dd>Sơn mài trên vóc</dd>
+            </div>
+            <div>
+              <dt class="caps">Kích thước</dt>
+              <dd class="num">100 &times; 140 cm</dd>
+            </div>
+            <div>
+              <dt class="caps">Tình trạng</dt>
+              <dd><span class="chip chip--gilt caps">Lưu giữ trong bộ sưu tập</span></dd>
+            </div>
+
+          </dl>
+
+          <div style="margin-top: var(--space-lg); display: flex; gap: var(--space-md); flex-wrap: wrap;">
+            <a class="btn btn--primary caps" href="contact.html?inquiry=SM-010">Gửi Yêu Cầu Yết Kiến / Thông Tin Tác Phẩm</a>
+            <a class="btn caps" href="collection.html">&larr; Trở Về Bộ Sưu Tập</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="section" style="padding-top: 0;">
-    <div class="wrap" style="display:grid; grid-template-columns: 1.1fr 1fr; gap: var(--space-8); align-items: start;">
-      <figure class="plate" style="padding: var(--space-2);">
-        <img src="https://images.pexels.com/photos/34669353/pexels-photo-34669353.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="" data-placeholder="pexels-34669353" style="aspect-ratio: 4/3; object-fit: cover;">
-        <div class="detail-strip">
-          <img src="https://images.pexels.com/photos/131685/pexels-photo-131685.jpeg?auto=compress&cs=tinysrgb&w=400" alt="" data-placeholder="pexels-131685" loading="lazy">
-        </div>
-      </figure>
+  <!-- Chú giải & Gallery chi tiết -->
+  <section class="section">
+    <div class="wrap entry">
+      <h2 class="title--s" style="margin-bottom: var(--space-md);">Ghi chú tác phẩm &amp; Chi tiết chất liệu</h2>
+      <div class="prose">
+        <p>Trưng bày để xem, không bán. Tên tác giả, tên tác phẩm, năm và số đo là dữ liệu mẫu cho bản demo. Hồ sơ người sáng tác đang được rà soát và xác minh.</p>
+      </div>
 
-      <div class="plate plate--tab" data-tab="HỒ SƠ TÁC PHẨM">
-        <span class="stamp-no mono">SM-010</span>
-        <h1 style="margin-top: var(--space-4); font-size: var(--step2);">Đình làng</h1>
-        <dl style="margin-top: var(--space-6);">
-          <div class="field"><dt>Người sáng tác</dt><dd>Chưa xác định</dd></div>
-          <div class="field"><dt>Năm</dt><dd>khoảng 1970</dd></div>
-          <div class="field"><dt>Chất liệu</dt><dd>Sơn mài trên vóc</dd></div>
-          <div class="field"><dt>Kích thước</dt><dd>45 × 65cm</dd></div>
-          <div class="field"><dt>Tình trạng sở hữu</dt><dd>[verify] đang rà soát nguồn gốc</dd></div>
-          <div class="field"><dt>Xác minh</dt><dd>[verify] chưa xác định người sáng tác</dd></div>
-        </dl>
-        <p style="margin-top: var(--space-6); color: var(--ink-soft); font-size: var(--step-1);">Trưng bày để xem, không bán. Tên tác giả, tên tác phẩm, năm và số đo là dữ liệu mẫu cho bản demo.</p>
+      <div style="margin-top: var(--space-xl);">
+        <p class="head caps">Chi tiết chụp cận cảnh</p>
+        <div class="pieces">
+          <figure class="plate plate--current">
+            <div class="plate__box" style="--ar: 1/1">
+              <img src="https://images.pexels.com/photos/131685/pexels-photo-131685.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Chi tiết 1" loading="lazy" data-placeholder="pexels-131685">
+            </div>
+          </figure>
+        </div>
       </div>
     </div>
   </section>
@@ -82,7 +134,7 @@
   <div class="colophon__inner wrap">
     <div class="colophon__brand">
       <a href="index.html" class="colophon__logo-link">
-        <img class="colophon__logo" src="./assets/img/mark-TECOTEC-Group.svg" alt="TECOTEC Group" width="80" height="80">
+        <img class="colophon__logo" src="./assets/img/mark-TECOTEC-Group.svg" alt="TECOTEC Group" width="60" height="60">
       </a>
       <h2 class="colophon__brand-name">TECOTEC NEW YORK LLC</h2>
       <div class="colophon__brand-sub caps">THÀNH VIÊN CỦA TECOTEC GROUP</div>
@@ -146,6 +198,6 @@
   </div>
 </footer>
 
-<script src="./assets/js/menu.js"></script>
+<script src="./assets/js/main.js" defer></script>
 </body>
 </html>

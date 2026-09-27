@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Inter:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/css/tokens.css">
 <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
@@ -18,34 +19,40 @@
     <a class="brand" href="index.html">
       <img class="brand__logo" src="./assets/img/mark-TECOTEC-Group.svg" alt="TECOTEC Group" width="44" height="44">
       <span class="brand__divider" aria-hidden="true"></span>
-      <span class="brand__text"><span class="brand__wordmark">tecotec.us</span><span class="brand__member">thành viên của TECOTEC Group</span></span>
+      <span class="brand__text">
+        <span class="brand__wordmark">tecotec.us</span>
+        <span class="brand__member">thành viên của TECOTEC Group</span>
+      </span>
     </a>
     <nav class="bar__nav" aria-label="Điều hướng chính">
-      <ul class="bar__links caps"><li><a href="about.html">Giới thiệu</a></li><li><a href="collection.html">Bộ sưu tập</a></li><li><a href="artists.html">Người sáng tác</a></li><li><a href="contact.html">Liên hệ</a></li></ul>
-      <button class="bar__toggle caps" type="button" aria-expanded="false" aria-controls="menu-panel">Mục lục</button>
-      <div class="bar__panel" id="menu-panel"><ul><li><a href="about.html">Giới thiệu</a></li><li><a href="collection.html">Bộ sưu tập</a></li><li><a href="artists.html">Người sáng tác</a></li><li><a href="contact.html">Liên hệ</a></li></ul></div>
+      <ul class="bar__links caps">
+        <li><a href="about.html">Giới thiệu</a></li>
+        <li><a href="collection.html">Bộ sưu tập</a></li>
+        <li><a href="son-mai.html">Sơn mài</a></li>
+        <li><a href="artists.html" class="is-active">Người sáng tác</a></li>
+        <li><a href="art-notes.html">Ghi chép nghệ thuật</a></li>
+        <li><a href="contact.html">Liên hệ</a></li>
+      </ul>
+      <button class="bar__toggle caps" type="button" aria-expanded="false" aria-controls="mobile-nav">Mục lục</button>
     </nav>
+  </div>
+  <div class="bar__panel" id="mobile-nav">
+    <ul class="caps">
+      <li><a href="about.html">Giới thiệu</a></li>
+      <li><a href="collection.html">Bộ sưu tập</a></li>
+      <li><a href="son-mai.html">Sơn mài</a></li>
+      <li><a href="artists.html" class="is-active">Người sáng tác</a></li>
+      <li><a href="art-notes.html">Ghi chép nghệ thuật</a></li>
+      <li><a href="contact.html">Liên hệ</a></li>
+    </ul>
   </div>
 </header>
 </div>
 
-<nav class="dossier-tabs" aria-label="Danh mục hồ sơ">
-  <div class="wrap">
-    <a href="index.html">01 · TỔNG QUAN</a>
-    <a href="collection.html">02 · BỘ SƯU TẬP</a>
-    <a href="son-mai.html">03 · SƠN MÀI</a>
-    <a href="artists.html" aria-current="page">04 · NGƯỜI SÁNG TÁC</a>
-    <a href="art-notes.html">05 · GHI CHÉP</a>
-    <a href="about.html">06 · GIỚI THIỆU</a>
-  </div>
-</nav>
-
 <main>
-  <section class="section" style="padding-bottom: var(--space-4);">
-    <div class="wrap">
-      <a class="link-arrow" href="artists.html">← Về danh sách người sáng tác</a>
-    </div>
-  </section>
+  <div class="wrap" style="padding-block: var(--space-5);">
+    <a class="link-arrow" href="artists.html">← Về danh sách người sáng tác</a>
+  </div>
 
   <section class="section" style="padding-top: 0;">
     <div class="wrap" style="display:grid; grid-template-columns: 1fr 1.4fr; gap: var(--space-8);">
