@@ -28,8 +28,15 @@
       <nav class="bar__nav" aria-label="Điều hướng chính">
         <ul class="bar__links caps">
           <li><a href="about.html">Giới thiệu</a></li>
-          <li><a href="collection.html" class="is-active">Bộ sưu tập</a></li>
-          <li><a href="son-mai.html">Sơn mài</a></li>
+          <li class="has-sub"><a href="collection.html" class="is-active">Bộ sưu tập</a>
+            <ul class="bar__sub caps">
+              <li><a href="son-mai.html">Sơn mài</a></li>
+              <li><a href="#">Sơn dầu</a></li>
+              <li><a href="#">Tranh lụa &amp; Giấy Dó</a></li>
+              <li><a href="#">Gốm nghệ thuật &amp; Điêu khắc</a></li>
+              <li><a href="#">Đồ trang trí nghệ thuật</a></li>
+            </ul>
+          </li>
           <li><a href="artists.html">Người sáng tác</a></li>
           <li><a href="art-notes.html">Ghi chép nghệ thuật</a></li>
           <li><a href="contact.html">Liên hệ</a></li>
@@ -40,8 +47,15 @@
     <div class="bar__panel" id="mobile-nav">
       <ul class="caps">
         <li><a href="about.html">Giới thiệu</a></li>
-        <li><a href="collection.html" class="is-active">Bộ sưu tập</a></li>
-        <li><a href="son-mai.html">Sơn mài</a></li>
+        <li class="has-sub"><a href="collection.html" class="is-active">Bộ sưu tập</a>
+          <ul class="bar__sub caps">
+            <li><a href="son-mai.html">Sơn mài</a></li>
+              <li><a href="#">Sơn dầu</a></li>
+              <li><a href="#">Tranh lụa &amp; Giấy Dó</a></li>
+              <li><a href="#">Gốm nghệ thuật &amp; Điêu khắc</a></li>
+              <li><a href="#">Đồ trang trí nghệ thuật</a></li>
+          </ul>
+        </li>
         <li><a href="artists.html">Người sáng tác</a></li>
         <li><a href="art-notes.html">Ghi chép nghệ thuật</a></li>
         <li><a href="contact.html">Liên hệ</a></li>
@@ -66,15 +80,11 @@
         <div class="caps num muted" style="margin-bottom: var(--space-2xs);"><a href="collection.html">Bộ sưu tập</a> &sol; <a href="son-mai.html">Sơn mài</a> &sol; SM-008</div>
         <h1 class="title title--2xl" style="font-size: var(--text-display); margin-bottom: var(--space-md);">Thiếu nữ và hoa sen</h1>
         <div class="tombstone">
-          <dl class="spec entry" style="border: var(--rule-hair) solid var(--color-rule); padding: var(--space-md); background: var(--color-paper-2);">
+          <dl class="spec entry">
 
             <div>
               <dt class="caps">Số hiệu</dt>
               <dd class="num">SM-008</dd>
-            </div>
-            <div>
-              <dt class="caps">Nhan đề</dt>
-              <dd class="label__title"><strong>Thiếu nữ và hoa sen</strong></dd>
             </div>
             <div>
               <dt class="caps">Người sáng tác</dt>
@@ -101,7 +111,6 @@
 
           <div style="margin-top: var(--space-lg); display: flex; gap: var(--space-md); flex-wrap: wrap;">
             <a class="btn btn--primary caps" href="contact.html?inquiry=SM-008">Gửi Yêu Cầu Yết Kiến / Thông Tin Tác Phẩm</a>
-            <a class="btn caps" href="collection.html">&larr; Trở Về Bộ Sưu Tập</a>
           </div>
         </div>
       </div>

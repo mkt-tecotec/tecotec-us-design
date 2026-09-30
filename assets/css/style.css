@@ -147,6 +147,30 @@ strong { font-weight: var(--wght-strong); }
 .bar__links a:hover, .bar__links a.is-hover { border-bottom-color: var(--color-rule); }
 .bar__links a.is-active { border-bottom-color: var(--color-ink); }
 .bar__links a:active { color: var(--color-ink-2); }
+.has-sub { position: relative; }
+.bar__sub {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 170px;
+  padding: var(--space-2xs) 0;
+  border: var(--rule-hair) solid var(--color-rule);
+  background: var(--color-paper);
+  z-index: var(--z-raised);
+}
+.has-sub:hover .bar__sub, .has-sub:focus-within .bar__sub { display: block; }
+.bar__sub a {
+  display: flex;
+  min-height: 40px;
+  align-items: center;
+  padding-inline: var(--space-md);
+  border-bottom: none;
+  white-space: nowrap;
+}
+.bar__sub a:hover, .bar__sub a.is-active { background: var(--color-paper-2); }
+.bar__panel .bar__sub { display: block; position: static; border: none; padding: 0; }
+.bar__panel .bar__sub a { padding-inline-start: calc(var(--page-gutter) + var(--space-lg)); }
 .bar__toggle {
   display: none;
   min-height: 44px;
@@ -321,7 +345,8 @@ strong { font-weight: var(--wght-strong); }
 .hero--photo .spread__text .caps { color: rgba(247, 243, 236, 0.82); }
 .hero--photo .spread__text .title { color: var(--color-paper); }
 .hero--photo .spread__text .lede { color: rgba(247, 243, 236, 0.88); }
-.hero--photo .spread__text label.caps { color: var(--color-paper); }
+.hero--photo .spread__side label.caps { color: var(--color-paper); }
+.hero--photo .spread__text .spec dt.caps { color: var(--color-muted); }
 
 .hero-slide__bg {
   position: absolute;
@@ -533,9 +558,9 @@ strong { font-weight: var(--wght-strong); }
   line-height: 1.2;
 }
 .chip--gilt {
-  border: 1px solid #F3C969;
-  color: #F3C969;
-  background-color: rgba(243, 201, 105, 0.15);
+  border: 1px solid var(--color-accent-2);
+  color: var(--color-ink-2);
+  background-color: rgba(184, 145, 47, 0.14);
 }
 .chip--dashed {
   border: 1px dashed rgba(255, 255, 255, 0.5);
@@ -786,7 +811,7 @@ a.row__inner:active { background: var(--color-paper-3); }
 .spec--contact > div { grid-template-columns: 13rem minmax(0, 1fr); }
 .spec dt { color: var(--color-muted); }
 .spec dd { min-width: 0; }
-.spec dd.num, .spec dd .num { color: var(--color-accent); }
+.spec dd.num, .spec dd .num { color: var(--color-accent); font-family: var(--font-body); }
 .spec dd a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.2em; transition: text-decoration-thickness var(--dur-short) var(--ease-out); }
 .spec dd a:hover { text-decoration-thickness: 2px; }
 .spec dd a:active { color: var(--color-ink-2); }

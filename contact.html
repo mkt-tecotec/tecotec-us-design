@@ -28,8 +28,15 @@
       <nav class="bar__nav" aria-label="Điều hướng chính">
         <ul class="bar__links caps">
           <li><a href="about.html">Giới thiệu</a></li>
-          <li><a href="collection.html">Bộ sưu tập</a></li>
-          <li><a href="son-mai.html">Sơn mài</a></li>
+          <li class="has-sub"><a href="collection.html">Bộ sưu tập</a>
+            <ul class="bar__sub caps">
+              <li><a href="son-mai.html">Sơn mài</a></li>
+              <li><a href="#">Sơn dầu</a></li>
+              <li><a href="#">Tranh lụa &amp; Giấy Dó</a></li>
+              <li><a href="#">Gốm nghệ thuật &amp; Điêu khắc</a></li>
+              <li><a href="#">Đồ trang trí nghệ thuật</a></li>
+            </ul>
+          </li>
           <li><a href="artists.html">Người sáng tác</a></li>
           <li><a href="art-notes.html">Ghi chép nghệ thuật</a></li>
           <li><a href="contact.html" class="is-active">Liên hệ</a></li>
@@ -40,8 +47,15 @@
     <div class="bar__panel" id="mobile-nav">
       <ul class="caps">
         <li><a href="about.html">Giới thiệu</a></li>
-        <li><a href="collection.html">Bộ sưu tập</a></li>
-        <li><a href="son-mai.html">Sơn mài</a></li>
+        <li class="has-sub"><a href="collection.html">Bộ sưu tập</a>
+          <ul class="bar__sub caps">
+            <li><a href="son-mai.html">Sơn mài</a></li>
+              <li><a href="#">Sơn dầu</a></li>
+              <li><a href="#">Tranh lụa &amp; Giấy Dó</a></li>
+              <li><a href="#">Gốm nghệ thuật &amp; Điêu khắc</a></li>
+              <li><a href="#">Đồ trang trí nghệ thuật</a></li>
+          </ul>
+        </li>
         <li><a href="artists.html">Người sáng tác</a></li>
         <li><a href="art-notes.html">Ghi chép nghệ thuật</a></li>
         <li><a href="contact.html" class="is-active">Liên hệ</a></li>
@@ -54,12 +68,38 @@
   <section class="hero--100vh-paper hero--photo">
     <div class="hero-slide__bg" style="background-image: url('./assets/img/home/hero-4.webp');"></div>
     <div class="hero-slide__scrim" style="background: rgba(0,0,0,0.65);"></div>
-    <div class="wrap spread" style="position: relative; z-index: 1;">
-      <!-- Form liên hệ -->
+    <div class="wrap spread spread--wide-text" style="position: relative; z-index: 1;">
+      <!-- Tiêu đề + Địa chỉ pháp nhân -->
       <div class="spread__text">
         <span class="caps num muted">GỬI YÊU CẦU THÔNG TIN HỒ SƠ</span>
         <h1 class="title title--2xl" style="margin-top: var(--space-2xs); font-size: var(--text-display);">Liên hệ với chúng tôi</h1>
         <p class="lede" style="margin-bottom: var(--space-lg);">Quý khách và nhà nghiên cứu có nhu cầu tìm hiểu thêm thông tin lưu trữ về các tác phẩm sơn mài xin gửi thư trao đổi trực tiếp.</p>
+        <dl class="spec entry spec--contact" style="border: var(--rule-heavy) solid var(--color-ink); padding: var(--space-lg); background: var(--color-paper-2);">
+          <div>
+            <dt class="caps">Pháp nhân chủ quản</dt>
+            <dd><strong>Tecotec New York LLC</strong></dd>
+          </div>
+          <div>
+            <dt class="caps">Thuộc hệ thống</dt>
+            <dd>TECOTEC Group</dd>
+          </div>
+          <div>
+            <dt class="caps">Địa chỉ đăng ký</dt>
+            <dd class="muted">New York, United States (Chờ xác nhận M12)</dd>
+          </div>
+          <div>
+            <dt class="caps">Email liên hệ</dt>
+            <dd><a href="mailto:contact@tecotec.us" class="num" style="color: var(--color-accent); font-weight: bold;">contact@tecotec.us</a></dd>
+          </div>
+          <div>
+            <dt class="caps">Hình thức hoạt động</dt>
+            <dd>Trưng bày tư liệu &bull; Không bán hàng</dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- Form liên hệ -->
+      <div class="spread__side">
         <form class="stack" action="#" method="get" onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Yêu cầu thông tin đã được ghi nhận.');">
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-md);">
             <div>
@@ -83,32 +123,6 @@
             <button type="submit" class="btn btn--primary caps" style="cursor: pointer;">Gửi Thư Trao Đổi &rarr;</button>
           </div>
         </form>
-      </div>
-
-      <!-- Địa chỉ pháp nhân -->
-      <div class="spread__side">
-        <dl class="spec entry spec--contact" style="border: var(--rule-heavy) solid var(--color-ink); padding: var(--space-lg); background: var(--color-paper-2);">
-          <div>
-            <dt class="caps">Pháp nhân chủ quản</dt>
-            <dd><strong>Tecotec New York LLC</strong></dd>
-          </div>
-          <div>
-            <dt class="caps">Thuộc hệ thống</dt>
-            <dd>TECOTEC Group</dd>
-          </div>
-          <div>
-            <dt class="caps">Địa chỉ đăng ký</dt>
-            <dd class="muted">New York, United States (Chờ xác nhận M12)</dd>
-          </div>
-          <div>
-            <dt class="caps">Email liên hệ</dt>
-            <dd><a href="mailto:contact@tecotec.us" class="num" style="color: var(--color-accent); font-weight: bold;">contact@tecotec.us</a></dd>
-          </div>
-          <div>
-            <dt class="caps">Hình thức hoạt động</dt>
-            <dd>Trưng bày tư liệu &bull; Không bán hàng</dd>
-          </div>
-        </dl>
       </div>
     </div>
   </section>
