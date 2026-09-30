@@ -68,60 +68,58 @@
   <section class="hero--100vh-paper hero--photo">
     <div class="hero-slide__bg" style="background-image: url('./assets/img/home/hero-4.webp');"></div>
     <div class="hero-slide__scrim" style="background: rgba(0,0,0,0.65);"></div>
-    <div class="wrap spread spread--wide-text" style="position: relative; z-index: 1;">
+    <div class="wrap spread spread--wide-text" style="position: relative; z-index: 1; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);">
       <!-- Tiêu đề + Địa chỉ pháp nhân -->
       <div class="spread__text">
         <span class="caps num muted">GỬI YÊU CẦU THÔNG TIN HỒ SƠ</span>
         <h1 class="title title--2xl" style="margin-top: var(--space-2xs); font-size: var(--text-display);">Liên hệ với chúng tôi</h1>
         <p class="lede" style="margin-bottom: var(--space-lg);">Quý khách và nhà nghiên cứu có nhu cầu tìm hiểu thêm thông tin lưu trữ về các tác phẩm sơn mài xin gửi thư trao đổi trực tiếp.</p>
-        <dl class="spec entry spec--contact" style="border: var(--rule-heavy) solid var(--color-ink); padding: var(--space-lg); background: var(--color-paper-2);">
-          <div>
-            <dt class="caps">Pháp nhân chủ quản</dt>
-            <dd><strong>Tecotec New York LLC</strong></dd>
-          </div>
-          <div>
-            <dt class="caps">Thuộc hệ thống</dt>
-            <dd>TECOTEC Group</dd>
-          </div>
-          <div>
-            <dt class="caps">Địa chỉ đăng ký</dt>
-            <dd class="muted">New York, United States (Chờ xác nhận M12)</dd>
-          </div>
-          <div>
-            <dt class="caps">Email liên hệ</dt>
-            <dd><a href="mailto:contact@tecotec.us" class="num" style="color: var(--color-accent); font-weight: bold;">contact@tecotec.us</a></dd>
-          </div>
-          <div>
-            <dt class="caps">Hình thức hoạt động</dt>
-            <dd>Trưng bày tư liệu &bull; Không bán hàng</dd>
-          </div>
-        </dl>
+        <ul class="contact-meta">
+          <li>
+            <span class="contact-meta__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V7l8-4 8 4v14"/><path d="M9 21v-6h6v6"/><path d="M9 10h.01M15 10h.01M9 14h.01M15 14h.01"/></svg></span>
+            <span class="contact-meta__label caps">Pháp nhân chủ quản</span>
+            <span class="contact-meta__value">Tecotec New York LLC</span>
+          </li>
+          <li>
+            <span class="contact-meta__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
+            <span class="contact-meta__label caps">Địa chỉ đăng ký</span>
+            <span class="contact-meta__value muted">New York, United States</span>
+          </li>
+          <li>
+            <span class="contact-meta__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 6.5 12 13l9-6.5"/></svg></span>
+            <span class="contact-meta__label caps">Email liên hệ</span>
+            <span class="contact-meta__value"><a href="mailto:contact@tecotec.us">contact@tecotec.us</a></span>
+          </li>
+          <li>
+            <span class="contact-meta__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
+            <span class="contact-meta__label caps">Hình thức hoạt động</span>
+            <span class="contact-meta__value">Trưng bày tư liệu &bull; Không bán hàng</span>
+          </li>
+        </ul>
       </div>
 
       <!-- Form liên hệ -->
       <div class="spread__side">
-        <form class="stack" action="#" method="get" onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Yêu cầu thông tin đã được ghi nhận.');">
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-md);">
-            <div>
-              <label class="caps" for="name" style="display: block; margin-bottom: var(--space-2xs); font-size: var(--text-xs);">Họ và tên *</label>
-              <input type="text" id="name" name="name" required style="width: 100%; padding: var(--space-sm); border: var(--rule-hair) solid var(--color-ink); background: var(--color-paper); color: var(--color-ink); font-family: inherit; font-size: var(--text-base);">
+        <form class="contact-form" action="#" method="get" onsubmit="event.preventDefault(); alert('Cảm ơn bạn! Yêu cầu thông tin đã được ghi nhận.');">
+          <div class="contact-form__row">
+            <div class="contact-form__field">
+              <label class="caps" for="name">Họ và tên *</label>
+              <input type="text" id="name" name="name" required placeholder="Nhập họ và tên">
             </div>
-            <div>
-              <label class="caps" for="email" style="display: block; margin-bottom: var(--space-2xs); font-size: var(--text-xs);">Địa chỉ Email *</label>
-              <input type="email" id="email" name="email" required style="width: 100%; padding: var(--space-sm); border: var(--rule-hair) solid var(--color-ink); background: var(--color-paper); color: var(--color-ink); font-family: inherit; font-size: var(--text-base);">
+            <div class="contact-form__field">
+              <label class="caps" for="email">Địa chỉ Email *</label>
+              <input type="email" id="email" name="email" required placeholder="Nhập email">
             </div>
           </div>
-          <div>
-            <label class="caps" for="inquiry" style="display: block; margin-bottom: var(--space-2xs); font-size: var(--text-xs);">Số hiệu hoặc Tên tác phẩm quan tâm</label>
-            <input type="text" id="inquiry" name="inquiry" placeholder="Ví dụ: SM-001 hoặc Bến sông sớm" style="width: 100%; padding: var(--space-sm); border: var(--rule-hair) solid var(--color-ink); background: var(--color-paper); color: var(--color-ink); font-family: inherit; font-size: var(--text-base);">
+          <div class="contact-form__field">
+            <label class="caps" for="inquiry">Số hiệu hoặc Tên tác phẩm quan tâm</label>
+            <input type="text" id="inquiry" name="inquiry" placeholder="Ví dụ: SM-001 hoặc Bến sông sớm">
           </div>
-          <div>
-            <label class="caps" for="message" style="display: block; margin-bottom: var(--space-2xs); font-size: var(--text-xs);">Nội dung tin nhắn *</label>
-            <textarea id="message" name="message" rows="3" required style="width: 100%; padding: var(--space-sm); border: var(--rule-hair) solid var(--color-ink); background: var(--color-paper); color: var(--color-ink); font-family: inherit; font-size: var(--text-base); resize: vertical;"></textarea>
+          <div class="contact-form__field">
+            <label class="caps" for="message">Nội dung tin nhắn *</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Nhập nội dung tin nhắn của bạn..."></textarea>
           </div>
-          <div>
-            <button type="submit" class="btn btn--primary caps" style="cursor: pointer;">Gửi Thư Trao Đổi &rarr;</button>
-          </div>
+          <button type="submit" class="btn btn--primary caps contact-form__submit">Gửi Thư Trao Đổi <span aria-hidden="true">&rarr;</span></button>
         </form>
       </div>
     </div>
